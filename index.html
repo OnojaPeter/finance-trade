@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/899e264fca.js" crossorigin="anonymous"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-text{
+            font-size: 3rem;
+        }
+        @media (max-width:1280px) {
+            .hero-text{
+                font-size: calc(1.375rem + 1.5vw);
+            }
+        }
+        .max-page-width {
+            max-width: 1500px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #hamMenu {
+            position: fixed;
+            top: 0;
+            right: -70%;
+            width: 70%;
+            height: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: right 0.5s ease;
+        }
+
+        #hamMenu.open {
+            right: 0;
+        }
+
+        .nav-link {
+            font-weight: 700;
+            font-size: 18px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        #hamMenu.open .nav-link {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #hamMenu.open .nav-link:nth-child(2) {
+            transition-delay: 0.3s;
+        }
+
+        #hamMenu.open .nav-link:nth-child(3) {
+            transition-delay: 0.5s;
+        }
+
+        #hamMenu.open .nav-link:nth-child(4) {
+            transition-delay: 0.7s;
+        }
+
+        #hamMenu.open .nav-link:nth-child(5) {
+            transition-delay: 0.9s;
+        }
+
+        #hamMenu.open .nav-link:nth-child(6) {
+            transition-delay: 1s;
+        }
+
+        #hamMenu.open .nav-link:nth-child(7) {
+            transition-delay: 1.1s;
+        }
+
+        #hamMenu.open .nav-link:nth-child(8) {
+            transition-delay: 1.2;
+        }
+
+        .menu-open {
+            overflow-y: hidden;
+        }
+
+        .transform-up:hover {
+            transform: translateY(-20px);
+        }
+    </style>
+</head>
+
+<body class="container max-page-width px-10 md:px-10 lg:px-24 ">
+    <header class="mt-4  md:mt-5  h-14  z-50 w-[100%] flex justify-center">
+        <nav class="flex flex-row justify-between h-14 items-center w-full ">
+            <!-- Desktop view -->
+            <div class="flex md:hidden w-[40%]">
+                <a href="/"><h1 class="text-2xl font-bold">LOGO</h1>
+                    <!-- <img class="cursor-pointer" src="" alt="Kreate Logo"> -->
+                </a>
+            </div>
+            <a class="hidden md:flex" href="/"><h1 class="text-2xl font-bold">LOGO</h1>
+                <!-- <img class="cursor-pointer" src="" alt="Kreate Logo"> -->
+            </a>
+            <div class="gap-4 hidden md:flex md:gap-8 lg:gap-14 font-semibold">
+                <a href="/" class="hover:underline hover:text-blue-600">Home</a>
+                <a href="/find-job" class="hover:underline hover:text-blue-600">About us</a>
+                <a href="/post-job" class="hover:underline hover:text-blue-600">Blog</a>
+                <a href="/post-job" class="hover:underline hover:text-blue-600">FAQs</a>
+                <a href="/post-job" class="hover:underline hover:text-blue-600">Contact Us</a>
+            </div>
+
+            <div class="gap-4 hidden md:flex md:gap-5 lg:gap-8 items-center font-semibold">
+                <a href="/login" class="hover:bg-blue-500 hover:text-white px-2 lg:px-4 py-1 rounded-md">Login</a>
+                <a href="/signup" class="bg-blue-600 hover:bg-blue-700 text-white px-2 lg:px-4 py-1 rounded-md">Sign Up</a>
+            </div>
+            <!-- hamburger button -->
+            <button id="hamburger" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" id="hamburger-icon" class="h-7 w-7" fill="none"
+                    viewBox="0 0 28 28" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        d="M4 6h20M4 14h20m-7 8h7" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile view -->
+    <div id="hamMenu" class=" top-14 right-0 bg-white p-4 z-50">
+        <!-- Close button -->
+        <button id="closeIcon" class="absolute top-0 right-0 mt-8 mr-4 sm:mr-12"><i
+                class="fa-solid fa-xmark fa-xl"></i></button>
+        <!-- Menu items -->
+        <div class="flex flex-col  mt-16">
+            <a href="/" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">Home</a>
+            <a href="/find-job" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">About us</a>
+            <a href="/post-job" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">Blog</a>
+            <a href="/post-job" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">FAQs</a>
+            <a href="/post-job" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">Contact Us</a>
+
+            <a href="/login" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">Login</a>
+            <a href="/signup" class="hover:underline hover:text-blue-600 py-4 nav-link">Sign Up</a>
+
+            <!-- <a href="login" class="hover:bg-[#10B981] hover:text-white hover:px-2 lg:px-4 py-2 mb-3 rounded-md border-b">Login</a>
+            <a href="signup" class="bg-[#10B981] hover:bg-green-700 px-2 lg:px-4 py-2 rounded-md text-white ">Sign Up</a> -->
+        </div>
+    </div>
+
+    <main>
+        <div class="container flex flex-row justify-between mt-10 md:mt-36">
+            <div class="container w-full md:w-6/12">
+                <h3 class=" mb-5 font-bold hero-text">Invest with <br class="hidden md:block"> confidence on the <br class="hidden md:block"> world's leading
+                    <br class="hidden md:block">investment platform
+                </h3>
+                <p class="mb-10">Join millions who've already discovered smarter <br class="hidden md:block"> investing in multiple types of
+                    assets. <br class="hidden md:block">
+                    Choose an investment product to start with.</p>
+                <a class="border-2 bg-blue-600 hover:bg-blue-800 shadow-2xl px-8 py-4 font-bold text-white transform duration-300 transition-transform hover:transform-up hover:relative hover:-top-1"
+                    href="">Get Started</a>
+                <a class="ml-10 font-bold text-blue-500" href="">Let's Talk ></a>
+            </div>
+            <div class="w-6/12 hidden md:block">
+                <img class="" src="img/section1_1661634984.webp" alt="">
+            </div>
+        </div>
+
+        <div class="container flex flex-col-reverse md:flex-row justify-between mt-20 md:mt-36">
+            <div>
+                <img class="" src="img/section3_1661635028.webp" alt="">
+            </div>
+            <div class="container md:pl-24 max-w-2xl flex flex-col gap-6">
+                <h3 class="text-4xl font-bold"> Few reasons why you should choose us</h3>
+                <p class="text-1xl">Logo Finance is the best and safest savings and investment firm, was
+                    established to provide intelligent portfolios with its expert investors, customer-priority approach,
+                    safe and high-tech investment tools. Logo Finance provides its clients with free insurance
+                    purchased from Lloyd’s of London, one of the world’s leading providers of specialist insurance,
+                    giving coverage of up to 1 million Euro, GBP,USD or AUD (depending on the region). The insurance is
+                    given automatically to all Logo Finance clients — there is no need to register.</p>
+
+                <ul class="flex flex-col gap-3">
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-4">
+                            <circle cx="12" cy="12" r="12" fill="#0000ff" />
+                            <path d="M9.75 16.75L5.5 12.5L6.91 11.09L9.75 13.91L17.59 6.09L19 7.5L9.75 16.75Z"
+                                fill="#ffffff" />
+                        </svg>
+                        Account Certified Privacy
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-4">
+                            <circle cx="12" cy="12" r="12" fill="#0000ff" />
+                            <path d="M9.75 16.75L5.5 12.5L6.91 11.09L9.75 13.91L17.59 6.09L19 7.5L9.75 16.75Z"
+                                fill="#ffffff" />
+                        </svg>
+                        Claim Profit Anytime
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-4">
+                            <circle cx="12" cy="12" r="12" fill="#0000ff" />
+                            <path d="M9.75 16.75L5.5 12.5L6.91 11.09L9.75 13.91L17.59 6.09L19 7.5L9.75 16.75Z"
+                                fill="#ffffff" />
+                        </svg>
+                        Buy Plans With Coupon
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-4">
+                            <circle cx="12" cy="12" r="12" fill="#0000ff" />
+                            <path d="M9.75 16.75L5.5 12.5L6.91 11.09L9.75 13.91L17.59 6.09L19 7.5L9.75 16.75Z"
+                                fill="#ffffff" />
+                        </svg>
+                        Investment Bonuses
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-4">
+                            <circle cx="12" cy="12" r="12" fill="#0000ff" />
+                            <path d="M9.75 16.75L5.5 12.5L6.91 11.09L9.75 13.91L17.59 6.09L19 7.5L9.75 16.75Z"
+                                fill="#ffffff" />
+                        </svg>
+                        Top Notched Security
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 mr-4">
+                            <circle cx="12" cy="12" r="12" fill="#0000ff" />
+                            <path d="M9.75 16.75L5.5 12.5L6.91 11.09L9.75 13.91L17.59 6.09L19 7.5L9.75 16.75Z"
+                                fill="#ffffff" />
+                        </svg>
+                        24/7 Customer Support
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="container mt-20 ">
+            <h2 class="text-4xl text-center font-bold">How do we operate?</h2>
+            <div class="container flex flex-col md:flex-row md:justify-between mt-10">
+                <div class="flex flex-col gap-10 ">
+                    <div class="flex flex-col gap-2">
+                        <h5 class="font-bold">Account setup</h5>
+                        <p class="font-light">Only 1 minute and you're in. Enter the information you need to become a
+                            member and start right away</p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h5 class="font-bold">Select a plan that suites your budget</h5>
+                        <p class="font-light">Select a standard plan, a project that suits your budget or a saving plan
+                            with a good duration and interest</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center my-16 md:my-0">
+                    <img class="w-9/12 relative " src="img/section2_1661634955.webp" alt="">
+                </div>
+
+                <div class="flex flex-col gap-10">
+                    <div class="flex flex-col gap-2">
+                        <h5 class="font-bold">Watch Your Investment Grow</h5>
+                        <p class="font-light">Invest and sit back. You can follow your investment status at any time and
+                            invest in limited time special offers.</p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h5 class="font-bold">Payout Day</h5>
+                        <p class="font-light">Your investment is eligible to withdraw anytime after the first 24 hours.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- <div>
+            <h1 class="text-4xl text-center mt-10">Find the right plan for you</h1>
+            <h1 class="text-1xl font-light text-center">Investment & Savings solution that is affordable</h1>
+            <div>
+               <div>
+                <button>Basic</button>
+                <button>Standard</button>
+                <button>Professional</button>
+                <button>World Class</button>
+                <button>SuperStar</button>
+               </div>
+            </div> -->
+
+        <div class="container mt-20">
+            <h3 class="text-center"> REVIEWS </h3>
+            <h2 class="text-center font-bold text-2xl mb-24"> Backed by strong global partners</h2>
+            <div class="flex flex-row justify-between">
+                <!-- <div> -->
+                    <div class="max-w-xs border-2 border-white px-10 py-4 shadow-2xl">
+                        <p class="text-sm">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium
+                            labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam
+                            repudiandae!</p>
+                        <div class="mt-5">
+                            <!-- <img class="h-10 rounded-xl" src="../img/avatar-ali.png" alt=""> -->
+                            <div class="">
+                                <p class="font-bold">John P. Doe</p>
+                                <p class="text-xs">Market Analyst</p>
+                            </div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+
+
+                <div class="max-w-xs border-2 border-white px-10 py-4 shadow-2xl">
+                    <p class="text-sm">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium
+                        labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam
+                        repudiandae!</p>
+                    <div class="mt-5">
+                        <!-- <img class="h-10 rounded-xl" src="../img/avatar-ali.png" alt=""> -->
+                        <div class="">
+                            <p class="font-bold">John P. Doe</p>
+                            <p class="text-xs">Professional Trader</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="max-w-xs border-2 border-white px-10 py-4 shadow-2xl">
+                    <p class="text-sm">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium
+                        labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam
+                        repudiandae!</p>
+                    <div class="mt-5">
+                        <!-- <img class="h-10 rounded-xl" src="../img/avatar-ali.png" alt=""> -->
+                        <div class="">
+                            <p class="font-bold">John P. Doe</p>
+                            <p class="text-xs">Office Assistant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- </div> -->
+    </main>
+
+    <footer class="relative container">
+        <div class="mt-20 flex flex-col gap-y-5  md:flex-row ">
+            <div class="w-1/4">
+                <h1 class="text-2xl font-bold">LOGO</h1>
+                <!-- <img class="pb-10" src="/img/logo.svg" alt=""> -->
+                <ul>
+                    <li class="pb-4"> <a class="text-gray-500" href=""> CALIFORNIA </a> </li>
+                    <li class="pb-4"> <a class="text-gray-500" href="">+1(000) finance</a> </li>
+                    <li> <a class="text-gray-500" href="">support@finance</a> </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-row flex-wrap gap-y-5 justify-between w-full md:w-3/4">
+                <div>
+                    <p class="font-bold pb-10">Quick Links</p>
+                    <ul>
+                        <li class="pb-4"> <a class="text-gray-500" href="">Standard Plans</a> </li>
+                        <li> <a class="text-gray-500" href="">Affiliate System</a> </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold pb-10">Company</p>
+                    <ul>
+                        <li class="pb-4"><a class="text-gray-500" href="">About Us</a></li>
+                        <li class="pb-4"> <a class="text-gray-500" href="">Contact Us</a></li>
+                        <li class="pb-4"><a class="text-gray-500" href="">FAQs</a></li>
+                        <li><a class="text-gray-500" href="">Blogs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold pb-10">More</p>
+                    <ul>
+                        <li class="pb-4"><a class="text-gray-500" href="">Cryptocurrency</a></li>
+                        <li class="pb-4"><a class="text-gray-500" href="">Affiliate and Partners</a></li>
+                        <li class="pb-4"><a class="text-gray-500" href="">Stocks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold pb-10">Resources</p>
+                    <ul>
+                        <li class="pb-4"><a class="text-gray-500" href="">Raise a Dispute</a></li>
+                        <li><a class="text-gray-500" href="">Your Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-10 md:my-20">
+
+        <div class=" flex flex-row justify-between">
+            <div>
+                <p class=" text-sm font-bold text-gray-500">Privacy Policy / Terms & Conditions</p>
+            </div>
+            <div>
+                <i class="fa-brands fa-instagram fa-xs border-2 px-1 py-2 mx-1 bg-gray-200 rounded-md"
+                    style="color: #808080;"></i>
+                <i class="fa-brands fa-twitter fa-xs border-2 px-1 py-2 mx-1 bg-gray-200 rounded-md"
+                    style="color: #808080;"></i>
+                <i class="fa-brands fa-whatsapp fa-xs border-2 px-1 py-2 mx-1 bg-gray-200 rounded-md"
+                    style="color: #808080;"></i>
+            </div>
+        </div>
+
+        <div>
+            <p class="text-center mt-10 text-sm text-gray-300">©  Finance <span id="year"></span>. All rights reserved.</p>
+            <p class="text-center mt-6 text-sm text-gray-300 md:w-4/6 relative md:left-48">When you visit or interact with our
+                sites, services or tools, we or our authorised service providers may use cookies for storing information
+                to help provide you with a better, faster and safer experience and for marketing purposes.</p>
+        </div>
+    </footer>
+
+    <script>
+        const date = new Date()
+        const year = date.getFullYear()
+        const copyrightYear = document.getElementById('year');
+        copyrightYear.innerText = year;
+        // console.log(year)
+
+        const hamburger = document.getElementById('hamburger');
+        const hamMenu = document.getElementById('hamMenu');
+        const body = document.body;
+        const closeIcon = document.getElementById('closeIcon');
+
+        hamburger.addEventListener('click', function () {
+            // alert('p')
+            hamMenu.classList.toggle('open');
+            // closeIcon.classList.toggle('hidden');
+            body.classList.toggle('menu-open');
+        });
+
+        closeIcon.addEventListener('click', function () {
+            hamMenu.classList.toggle('open');
+            closeIcon.classList.remove('open');
+            body.classList.toggle('menu-open');
+        });
+
+    </script>
+
+</body>
+
+</html>
