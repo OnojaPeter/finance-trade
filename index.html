@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/main.css">
     <script src="https://kit.fontawesome.com/899e264fca.js" crossorigin="anonymous"></script>
 
@@ -13,17 +20,64 @@
         html {
             scroll-behavior: smooth;
         }
+        body{
+            font-family: "Ubuntu", sans-serif;
+        }
+        .owl-carousel .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .custom-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+        .custom-nav button {
+            background: white;
+            border: none;
+            color: black;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            pointer-events: all;
+            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .custom-nav button:hover {
+            background: blue;
+            color: white;
+        }
+        .custom-nav svg {
+            width: 24px;
+            height: 24px;
+        }
+        .owl-carousel .item {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 
-        .hero-text{
+        }
+        .hero-text {
             font-size: 3rem;
         }
+
         @media (max-width:1280px) {
-            .hero-text{
+            .hero-text {
                 font-size: calc(1.375rem + 1.5vw);
             }
         }
+        @media (max-width:1024px) {
+            .hero-text {
+                font-size: calc(1.2rem + 1vw);
+            }
+        }
+
         .max-page-width {
-            max-width: 1500px;
+            max-width: 1300px;
             width: 100%;
             margin: 0 auto;
         }
@@ -90,22 +144,30 @@
         .transform-up:hover {
             transform: translateY(-20px);
         }
+        .ash-text {
+            color: #677788;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
     </style>
 </head>
 
-<body class="container max-page-width px-10 md:px-10 lg:px-24 ">
-    <header class="mt-4  md:mt-5  h-14  z-50 w-[100%] flex justify-center">
+<body class=" ">
+    <header class="mt-4  md:mt-5  h-14  z-50 w-[100%] flex justify-center container max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
         <nav class="flex flex-row justify-between h-14 items-center w-full ">
             <!-- Desktop view -->
             <div class="flex md:hidden w-[40%]">
-                <a href="/"><h1 class="text-2xl font-bold">LOGO</h1>
+                <a href="/">
+                    <h1 class="text-2xl font-bold">LOGO</h1>
                     <!-- <img class="cursor-pointer" src="" alt="Kreate Logo"> -->
                 </a>
             </div>
-            <a class="hidden md:flex" href="/"><h1 class="text-2xl font-bold">LOGO</h1>
+            <a class="hidden md:flex" href="/">
+                <h1 class="text-2xl font-bold">LOGO</h1>
                 <!-- <img class="cursor-pointer" src="" alt="Kreate Logo"> -->
             </a>
-            <div class="gap-4 hidden md:flex md:gap-8 lg:gap-14 font-semibold">
+            <div class="gap-4 hidden md:flex md:gap-8 lg:gap-14 font-medium">
                 <a href="/" class="hover:underline hover:text-blue-600">Home</a>
                 <a href="/find-job" class="hover:underline hover:text-blue-600">About us</a>
                 <a href="/post-job" class="hover:underline hover:text-blue-600">Blog</a>
@@ -113,9 +175,10 @@
                 <a href="/post-job" class="hover:underline hover:text-blue-600">Contact Us</a>
             </div>
 
-            <div class="gap-4 hidden md:flex md:gap-5 lg:gap-8 items-center font-semibold">
+            <div class="gap-4 hidden md:flex md:gap-5 lg:gap-8 items-center font-medium">
                 <a href="/login" class="hover:bg-blue-500 hover:text-white px-2 lg:px-4 py-1 rounded-md">Login</a>
-                <a href="/signup" class="bg-blue-600 hover:bg-blue-700 text-white px-2 lg:px-4 py-1 rounded-md">Sign Up</a>
+                <a href="/signup" class="bg-blue-600 hover:bg-blue-700 text-white px-2 lg:px-4 py-1 rounded-md">Sign
+                    Up</a>
             </div>
             <!-- hamburger button -->
             <button id="hamburger" class="md:hidden">
@@ -149,31 +212,38 @@
         </div>
     </div>
 
-    <main>
-        <div class="container flex flex-row justify-between mt-10 md:mt-36">
-            <div class="container w-full md:w-6/12">
-                <h3 class=" mb-5 font-bold hero-text">Invest with <br class="hidden md:block"> confidence on the <br class="hidden md:block"> world's leading
+    <main class="container max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
+        <div class="container flex flex-row justify-between mt-10 md:mt-15 h-auto max-h-[600px]">
+            <div class="container w-full md:w-6/12 flex flex-col ">
+                <h3 class=" mb-5 font-medium hero-text ">Invest with <br class="hidden md:block"> confidence on the <br
+                        class="hidden md:block"> world's leading
                     <br class="hidden md:block">investment platform
                 </h3>
-                <p class="mb-10">Join millions who've already discovered smarter <br class="hidden md:block"> investing in multiple types of
+                <p class="mb-10 ash-text">Join millions who've already discovered smarter <br class="hidden md:block"> investing
+                    in multiple types of
                     assets. <br class="hidden md:block">
-                    Choose an investment product to start with.</p>
-                <a class="border-2 bg-blue-600 hover:bg-blue-800 shadow-2xl px-8 py-4 font-bold text-white transform duration-300 transition-transform hover:transform-up hover:relative hover:-top-1"
+                    Choose an investment product to start with.
+                </p>
+
+                <div>
+                    <a class="rounded-md bg-blue-600 hover:bg-blue-800 shadow-2xl px-7 py-4 font-bold text-white transform duration-300 transition-transform hover:transform-up hover:relative hover:-top-1"
                     href="">Get Started</a>
-                <a class="ml-10 font-bold text-blue-500" href="">Let's Talk ></a>
+                    <a class="ml-10 font-bold text-blue-500" href="">Let's Talk ></a>
+                </div>
+                
             </div>
             <div class="w-6/12 hidden md:block">
-                <img class="" src="img/section1_1661634984.webp" alt="">
+                <img class="w-full h-full object-contain" src="img/section1_1661634984.webp" alt="">
             </div>
         </div>
 
-        <div class="container flex flex-col-reverse md:flex-row justify-between mt-20 md:mt-36">
+        <div class="container flex flex-col-reverse gap-10 xl:gap-13 lg:flex-row justify-between mt-20">
             <div>
-                <img class="" src="img/section3_1661635028.webp" alt="">
+                <img class="w-full h-full object-contain" src="img/section3_1661635028.webp" alt="">
             </div>
-            <div class="container md:pl-24 max-w-2xl flex flex-col gap-6">
-                <h3 class="text-4xl font-bold"> Few reasons why you should choose us</h3>
-                <p class="text-1xl">Logo Finance is the best and safest savings and investment firm, was
+            <div class="container  max-w-2xl flex flex-col gap-6 ">
+                <h3 class="text-2xl font-medium"> Few reasons why you should choose us</h3>
+                <p class="ash-text">Logo Finance is the best and safest savings and investment firm, was
                     established to provide intelligent portfolios with its expert investors, customer-priority approach,
                     safe and high-tech investment tools. Logo Finance provides its clients with free insurance
                     purchased from Lloyd’s of London, one of the world’s leading providers of specialist insurance,
@@ -235,34 +305,34 @@
         </div>
 
         <div class="container mt-20 ">
-            <h2 class="text-4xl text-center font-bold">How do we operate?</h2>
-            <div class="container flex flex-col md:flex-row md:justify-between mt-10">
+            <h4 class="text-lg text-center uppercase font-medium text-[#677788]">How do we operate?</h4>
+            <div class="container flex flex-col lg:flex-row lg:justify-between mt-7">
                 <div class="flex flex-col gap-10 ">
                     <div class="flex flex-col gap-2">
-                        <h5 class="font-bold">Account setup</h5>
-                        <p class="font-light">Only 1 minute and you're in. Enter the information you need to become a
+                        <h5 class="font-medium text-xl">Account setup</h5>
+                        <p class="ash-text">Only 1 minute and you're in. Enter the information you need to become a
                             member and start right away</p>
                     </div>
                     <div class="flex flex-col gap-2">
-                        <h5 class="font-bold">Select a plan that suites your budget</h5>
-                        <p class="font-light">Select a standard plan, a project that suits your budget or a saving plan
+                        <h5 class="font-medium text-xl">Select a plan that suites your budget</h5>
+                        <p class="ash-text">Select a standard plan, a project that suits your budget or a saving plan
                             with a good duration and interest</p>
                     </div>
                 </div>
 
-                <div class="flex justify-center my-16 md:my-0">
-                    <img class="w-9/12 relative " src="img/section2_1661634955.webp" alt="">
+                <div class="flex justify-center my-16 lg:my-0">
+                    <img class="w-full md:w-9/12 relative " src="img/section2_1661634955.webp" alt="">
                 </div>
 
                 <div class="flex flex-col gap-10">
                     <div class="flex flex-col gap-2">
-                        <h5 class="font-bold">Watch Your Investment Grow</h5>
-                        <p class="font-light">Invest and sit back. You can follow your investment status at any time and
+                        <h5 class="font-medium text-xl">Watch Your Investment Grow</h5>
+                        <p class="ash-text">Invest and sit back. You can follow your investment status at any time and
                             invest in limited time special offers.</p>
                     </div>
                     <div class="flex flex-col gap-2">
-                        <h5 class="font-bold">Payout Day</h5>
-                        <p class="font-light">Your investment is eligible to withdraw anytime after the first 24 hours.
+                        <h5 class="font-medium text-xl">Payout Day</h5>
+                        <p class="ash-text">Your investment is eligible to withdraw anytime after the first 24 hours.
                         </p>
                     </div>
 
@@ -282,54 +352,53 @@
                </div>
             </div> -->
 
-        <div class="container mt-20">
-            <h3 class="text-center"> REVIEWS </h3>
-            <h2 class="text-center font-bold text-2xl mb-24"> Backed by strong global partners</h2>
-            <div class="flex flex-row justify-between">
-                <!-- <div> -->
-                    <div class="max-w-xs border-2 border-white px-10 py-4 shadow-2xl">
-                        <p class="text-sm">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium
-                            labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam
-                            repudiandae!</p>
-                        <div class="mt-5">
-                            <!-- <img class="h-10 rounded-xl" src="../img/avatar-ali.png" alt=""> -->
-                            <div class="">
-                                <p class="font-bold">John P. Doe</p>
-                                <p class="text-xs">Market Analyst</p>
-                            </div>
-                        </div>
-                    </div>
-                <!-- </div> -->
+        <div class="container my-20 mx-auto relative">
+            <h3 class="text-lg text-center uppercase font-medium text-[#677788]">REVIEWS</h3>
+            <h2 class="text-center font-medium text-xl mb-10">Backed by strong global partners</h2>
 
+            <div class="custom-nav z-50 ">
+                <button class="custom-prev shadow-2xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button class="custom-next shadow-2xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
 
-                <div class="max-w-xs border-2 border-white px-10 py-4 shadow-2xl">
-                    <p class="text-sm">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium
-                        labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam
-                        repudiandae!</p>
+            <div class="owl-carousel owl-theme px-5">
+                <div class="item border-2 border-white px-8 py-4 flex flex-col mb-5">
+                    <p class="text-base">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam repudiandae!</p>
                     <div class="mt-5">
-                        <!-- <img class="h-10 rounded-xl" src="../img/avatar-ali.png" alt=""> -->
-                        <div class="">
-                            <p class="font-bold">John P. Doe</p>
-                            <p class="text-xs">Professional Trader</p>
-                        </div>
+                        <p class="font-medium">John P. Doe</p>
+                        <p class="text-xs text-[#677788]">Market Analyst</p>
                     </div>
                 </div>
-
-
-                <div class="max-w-xs border-2 border-white px-10 py-4 shadow-2xl">
-                    <p class="text-sm">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium
-                        labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam
-                        repudiandae!</p>
+                <div class="item border-2 border-white px-8 py-4 flex flex-col mb-5">
+                    <p class="text-base">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam repudiandae!</p>
                     <div class="mt-5">
-                        <!-- <img class="h-10 rounded-xl" src="../img/avatar-ali.png" alt=""> -->
-                        <div class="">
-                            <p class="font-bold">John P. Doe</p>
-                            <p class="text-xs">Office Assistant</p>
-                        </div>
+                        <p class="font-medium">John P. Doe</p>
+                        <p class="text-xs text-[#677788]">Professional Trader</p>
+                    </div>
+                </div>
+                <div class="item border-2 border-white px-8 py-4 flex flex-col mb-5">
+                    <p class="text-base">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam repudiandae!</p>
+                    <div class="mt-5">
+                        <p class="font-medium">John P. Doe</p>
+                        <p class="text-xs text-[#677788]">Office Assistant</p>
+                    </div>
+                </div>
+                <div class="item border-2 border-white px-8 py-4 flex flex-col mb-5">
+                    <p class="text-base">Lorem ipsum dolo culpa sed nostrum, alias omnis architecto debitis laudantium labore assumenda quaerat vel, amet atque. Dolore ut dignissimos asperiores in quibusdam repudiandae!</p>
+                    <div class="mt-5">
+                        <p class="font-medium">John P. Doe</p>
+                        <p class="text-xs text-[#677788]">Software Engineer</p>
                     </div>
                 </div>
             </div>
-
         </div>
 
 
@@ -338,47 +407,47 @@
         <!-- </div> -->
     </main>
 
-    <footer class="relative container">
-        <div class="mt-20 flex flex-col gap-y-5  md:flex-row ">
+    <footer class="relative py-20 bg-lightwhite w-full">
+        <div class=" flex flex-col gap-y-5  md:flex-row container max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
             <div class="w-1/4">
                 <h1 class="text-2xl font-bold">LOGO</h1>
                 <!-- <img class="pb-10" src="/img/logo.svg" alt=""> -->
                 <ul>
-                    <li class="pb-4"> <a class="text-gray-500" href=""> CALIFORNIA </a> </li>
-                    <li class="pb-4"> <a class="text-gray-500" href="">+1(000) finance</a> </li>
+                    <li class="pb-2 md:pb-4"> <a class="text-gray-500" href=""> CALIFORNIA </a> </li>
+                    <li class="pb-2 md:pb-4"> <a class="text-gray-500" href="">+1(000) finance</a> </li>
                     <li> <a class="text-gray-500" href="">support@finance</a> </li>
                 </ul>
             </div>
 
             <div class="flex flex-row flex-wrap gap-y-5 justify-between w-full md:w-3/4">
                 <div>
-                    <p class="font-bold pb-10">Quick Links</p>
+                    <p class="font-bold pb-4 md:pb-5">Quick Links</p>
                     <ul>
-                        <li class="pb-4"> <a class="text-gray-500" href="">Standard Plans</a> </li>
+                        <li class="pb-2 md:pb-4"> <a class="text-gray-500" href="">Standard Plans</a> </li>
                         <li> <a class="text-gray-500" href="">Affiliate System</a> </li>
                     </ul>
                 </div>
                 <div>
-                    <p class="font-bold pb-10">Company</p>
+                    <p class="font-bold pb-4 md:pb-5">Company</p>
                     <ul>
-                        <li class="pb-4"><a class="text-gray-500" href="">About Us</a></li>
-                        <li class="pb-4"> <a class="text-gray-500" href="">Contact Us</a></li>
-                        <li class="pb-4"><a class="text-gray-500" href="">FAQs</a></li>
+                        <li class="pb-2 md:pb-4"><a class="text-gray-500" href="">About Us</a></li>
+                        <li class="pb-2 md:pb-4"> <a class="text-gray-500" href="">Contact Us</a></li>
+                        <li class="pb-2 md:pb-4"><a class="text-gray-500" href="">FAQs</a></li>
                         <li><a class="text-gray-500" href="">Blogs</a></li>
                     </ul>
                 </div>
                 <div>
-                    <p class="font-bold pb-10">More</p>
+                    <p class="font-bold pb-4 md:pb-5">More</p>
                     <ul>
-                        <li class="pb-4"><a class="text-gray-500" href="">Cryptocurrency</a></li>
-                        <li class="pb-4"><a class="text-gray-500" href="">Affiliate and Partners</a></li>
-                        <li class="pb-4"><a class="text-gray-500" href="">Stocks</a></li>
+                        <li class="pb-2 md:pb-4"><a class="text-gray-500" href="">Cryptocurrency</a></li>
+                        <li class="pb-2 md:pb-4"><a class="text-gray-500" href="">Affiliate and Partners</a></li>
+                        <li class="pb-2 md:pb-4"><a class="text-gray-500" href="">Stocks</a></li>
                     </ul>
                 </div>
                 <div>
-                    <p class="font-bold pb-10">Resources</p>
+                    <p class="font-bold pb-4 md:pb-5">Resources</p>
                     <ul>
-                        <li class="pb-4"><a class="text-gray-500" href="">Raise a Dispute</a></li>
+                        <li class="pb-2 md:pb-4"><a class="text-gray-500" href="">Raise a Dispute</a></li>
                         <li><a class="text-gray-500" href="">Your Account</a></li>
                     </ul>
                 </div>
@@ -387,7 +456,7 @@
 
         <hr class="my-10 md:my-20">
 
-        <div class=" flex flex-row justify-between">
+        <div class=" flex flex-row justify-between container max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
             <div>
                 <p class=" text-sm font-bold text-gray-500">Privacy Policy / Terms & Conditions</p>
             </div>
@@ -401,14 +470,19 @@
             </div>
         </div>
 
-        <div>
-            <p class="text-center mt-10 text-sm text-gray-300">©  Finance <span id="year"></span>. All rights reserved.</p>
-            <p class="text-center mt-6 text-sm text-gray-300 md:w-4/6 relative md:left-48">When you visit or interact with our
+        <div class="container max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
+            <p class="text-center mt-10 text-sm text-gray-300">© Finance <span id="year"></span>. All rights reserved.
+            </p>
+            <p class="text-center mt-6 text-sm text-gray-300 md:w-4/6 relative md:left-48">When you visit or interact
+                with our
                 sites, services or tools, we or our authorised service providers may use cookies for storing information
                 to help provide you with a better, faster and safer experience and for marketing purposes.</p>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="slider.js"></script>
     <script>
         const date = new Date()
         const year = date.getFullYear()
