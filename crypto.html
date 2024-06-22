@@ -1,73 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryptocurrency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/899e264fca.js" crossorigin="anonymous"></script>
 </head>
-<body class="container ">
 
-    <div class="bg-bgabout bg-cover bg-no-repeat bg-top">
-      <!-- navbar -->
-      <nav class="relative container pt-14 mx-14 p-6 mx-40">
-        <!-- flex container -->
-        <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <div class="pt-2">
-                <img src="/img/logo.svg" alt="">
+<body class=" ">
+    <!-- navbar from ejs-->
+    <main class="max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
+        <section class="my-20">
+            <div class="">
+                <div class="text-center text-4xl font-bold ">Cryptocurrency</div>
+                <div class="mt-2 text-center text-gray-500 text-lg">The Better way to Invest. The World’s
+                    Leading Investing Platform.</div>
             </div>
-            <!-- Menu Items -->
-            <div class="hidden space-x-6 mr-10 md:flex ">
-                <a href="#" class="hover:text-darkGrayishBlue">About us</a>
-                <a href="#" class="hover:text-darkGrayishBlue">Blog</a>
-                <a href="#" class="hover:text-darkGrayishBlue">FAQs</a>
-                <a href="#" class="hover:text-darkGrayishBlue">Contact Us</a>
-                <a href="#" class="hover:text-darkGrayishBlue">More Pages</a>
-                <a href="#" class="hover:text-darkGrayishBlue">Sign In </a>
-            </div>
-            <!-- Button -->
-            <!-- <a href="" class="hidden p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight md:block">Get Started</a> -->
-              <!-- Hamburger Icon  -->
-        <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
-            <span class="hamburger-top"></span>
-            <span class="hamburger-middle"></span>
-            <span class="hamburger-bottom"></span>
-        </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden">
-            <div id="menu" class="absolute flex-col items-center self-end py-8 mt-10 space-y-6 hidden font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-                <a href="">Pricing</a>
-                <a href="">Product</a>
-                <a href="">About Us</a>
-                <a href="">Careers</a>
-                <a href="">Community</a>
-            </div>
-        </div>
-</nav>
-<main class="mx-16">
-    <div class="container pb-14 ml-20 mr-10">
-        <div class="text-center text-4xl font-bold mt-20 ">Cryptocurrency</div>
-        <div class="mt-2 ml-20 text-center text-gray-500 mr-20 text-lg">The Better way to Invest. The World’s Leading Investing Platform.</div>
-        </div>
-    </div>
-            <div class="flex flex-row justify-between mx-16 mt-10">
 
-            <div class="mt-20 mx-28">
-                <p class="text-sm text-gray-500 font-bold">The first crypto currency, called Bit-Gold, was created by Nick Szabo; and it was designed and based on an encrypted algorithm that draws its value from the numbers of transactions made on the asset.</p>
-                <p class="text-sm text-gray-500 font-bold pt-6">That currency was not used or traded enough so it disappeared for a while - until on 2009, Satoshi Nakamoto, a computer programmer's pseudonym, designed a better algorithm that draws the value from the entire cryptocurrency system collectively, making it an all-around secure asset. Meaning, to hack the new algorithm, you would need to hack every server that contains the cryptocurrency around the world, which is virtually impossible. This has made Nakamoto's asset safer than money in the bank- he called it Bitcoin.</p>
-                <p class="text-sm text-gray-500 font-bold pt-6">Today, there are more than a 1000 different crypto currency and the block chain technology that they are based on is being implemented in almost every bank around the world!</p>
-                <p class="text-sm text-gray-500 font-bold pt-6">The idea behind cryptocurrencies is to put the power back in the public hands and loosen the banks' grip on the financial world. This idea spread like fire and some of the currencies jumped from few cents to thousands of dollars. It seems as if this is the future and it is already here.</p>
-                <p class="text-sm text-gray-500 font-bold pt-6">How do we know this is not a temporary bubble?</p>
-                <p class="text-sm text-gray-500 font-bold pt-6">As you read before, the bitcoin is celebrating 10 years anniversary soon; and just in the last 10 months alone, more than 680 new cryptocurrencies based on the same technology were created.</p>
-                <p class="text-sm text-gray-500 font-bold pt-6">Add to that the fact that China is banning all cryptocurrencies from the country to keep control in the banks hands by what the finance world is calling "the purge" before the new Chinese crypto's birth.</p>
-                <p class="text-sm text-gray-500 font-bold pt-6">Long story short, now is the time and way to take control back from the banks and make money without anyone putting his hand in your pocket.</p>
+            <div class="flex flex-col gap-4 mt-10">
+
+                    <p class="ash-text">The first crypto currency, called Bit-Gold, was created by
+                        Nick
+                        Szabo; and it was designed and based on an encrypted algorithm that draws its value from the numbers
+                        of
+                        transactions made on the asset.</p>
+                    <p class="ash-text">That currency was not used or traded enough so it
+                        disappeared for a while - until on 2009, Satoshi Nakamoto, a computer programmer's pseudonym,
+                        designed a
+                        better algorithm that draws the value from the entire cryptocurrency system collectively, making it
+                        an
+                        all-around secure asset. Meaning, to hack the new algorithm, you would need to hack every server
+                        that
+                        contains the cryptocurrency around the world, which is virtually impossible. This has made
+                        Nakamoto's
+                        asset safer than money in the bank- he called it Bitcoin.</p>
+                    <p class="ash-text">Today, there are more than a 1000 different crypto
+                        currency
+                        and the block chain technology that they are based on is being implemented in almost every bank
+                        around
+                        the world!</p>
+                    <p class="ash-text">The idea behind cryptocurrencies is to put the power
+                        back in
+                        the public hands and loosen the banks' grip on the financial world. This idea spread like fire and
+                        some
+                        of the currencies jumped from few cents to thousands of dollars. It seems as if this is the future
+                        and
+                        it is already here.</p>
+                    <p class="ash-text">How do we know this is not a temporary bubble?</p>
+                    <p class="ash-text">As you read before, the bitcoin is celebrating 10 years
+                        anniversary soon; and just in the last 10 months alone, more than 680 new cryptocurrencies based on
+                        the
+                        same technology were created.</p>
+                    <p class="ash-text">Add to that the fact that China is banning all
+                        cryptocurrencies from the country to keep control in the banks hands by what the finance world is
+                        calling "the purge" before the new Chinese crypto's birth.</p>
+                    <p class="ash-text">Long story short, now is the time and way to take
+                        control
+                        back from the banks and make money without anyone putting his hand in your pocket.</p>
+                
             </div>
-    </div>
-</main>
-<!-- <footer class="bg-lightwhite mt-10"> -->
-   
+        </section>
+    </main>
+    <!-- <footer class="bg-lightwhite mt-10"> -->
+
 </body>
+
 </html>
