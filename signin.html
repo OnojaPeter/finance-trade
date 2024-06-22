@@ -1,86 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="https://kit.fontawesome.com/899e264fca.js" crossorigin="anonymous"></script>
 </head>
-<body class="container ">
 
+<body class=" ">
+    <!-- navbar from ejs-->
 
-      <!-- navbar -->
-      <nav class="relative container pt-4 mx-4 p-6 mx-4">
-        <!-- flex container -->
-        <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <div class="pt-2">
-                <img src="/img/logo.svg" alt="">
-            </div>
+    <main class="max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
+        <section class="my-20 mx-6 sm:mx-16 md:mx-44 lg:mx-60 xl:mx-80 ">
+            <div class="shadow-2xl p-6 md:p-10 rounded-md">
+                <form action="" class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="block text-gray-700 text-sm font-bold" for="">Email Address</label>
+                        <input placeholder="Email Address"
+                            class="border rounded py-3 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300"
+                            type="email" />
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="block text-gray-700 text-sm font-bold" for="">Password</label>
+                        <input placeholder="Password"
+                            class="border rounded py-3 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300"
+                            type="password" />
+                    </div>
+                    <div class="">
+                        <a class="underline decoration-dashed text-gray-400 hover:text-blue-500 text-sm" href="">Forgot
+                            Password?
+                        </a>
+                    </div>
 
-            <div class="mr-36 relative top-24">
-                <p class="text-2xl font-bold pb-2">Welcome Back</p>
-                <p class="text-gray-500 text-center">Login To Manage Your Account.</p>
-            </div>
-            <!-- Menu Items -->
-            <div class="hidden space-x-6 mr-10 md:flex ">
-                <a href="#" class="hover:text-blue-700 text-sm text-gray-500"> < Go Back</a>
-            </div>
-            <!-- Button -->
-            <!-- <a href="" class="hidden p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight md:block">Get Started</a> -->
-              <!-- Hamburger Icon  -->
-        <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
-            <span class="hamburger-top"></span>
-            <span class="hamburger-middle"></span>
-            <span class="hamburger-bottom"></span>
-        </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden">
-            <div id="menu" class="absolute flex-col items-center self-end py-8 mt-10 space-y-6 hidden font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-                <a href="">Pricing</a>
-                <a href="">Product</a>
-                <a href="">About Us</a>
-                <a href="">Careers</a>
-                <a href="">Community</a>
-            </div>
-        </div>
-</nav>
-<main class="mx-16 mt-36">
-    <div>
-            <form action="">
-        <div class="mx-80 mt-6">
-            <div class="mx-6 ml-12 mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="">Email Address</label>
-            <input placeholder="Email Address" class="shadow appearance-none border rounded  py-2 pb-4 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300" type="text">
-            </div>
-        </div>
-        <div class="mx-80 mt-6">
-            <div class="mx-6 ml-12 mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="">Password <a class="underline decoration-dashed ml-96 text-gray-400 hover:text-blue-500 text-sm" href="">Forgot Password?</a> </label>
-            <input type="password" class="shadow appearance-none border rounded  py-2 pb-4 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300" type="text">
-            </div>
-        </div>
-        <div class="mx-80 mt-6">
-            <div class="mx-6 ml-12 mb-4">
-                <input class=" text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600 focus:border-blue-300" type="checkbox"><p class="text-sm inline text-gray-400 hover:border-blue-300"> Remember Me?  </p>
-            </div>
-        </div>
+                    <div class="">
+                        <button
+                            class="border rounded py-3 bg-blue-600 hover:bg-blue-800 w-full mt-4 text-white font-semibold">
+                            Login Account
+                        </button>
+                    </div>
+                </form>
 
-        <div class="mx-80 mt-6">
-            <div class="mx-6 ml-12">
-                <p class="text-sm inline text-gray-400 "> Don't have an Account? <a class="text-blue-600 hover:text-blue-800 hover:font-bold" href="">Sign Up</a></p>
+                <div class="mt-6 flex justify-center">
+                    <p class="text-sm inline text-gray-400 text-center">
+                        Don't have an Account?
+                        <a class="text-blue-600 hover:text-blue-800 hover:font-bold" href="/signup.html">Sign Up</a>
+                    </p>
+                </div>
             </div>
-        </div>
-
-        <div class="mx-96">
-        <button class="border rounded py-3 bg-blue-500 w-full mt-4 text-white text-bold relative right-4 hover:relative hover:-top-1">Login</button>
-        </div>
-            </form>
-    </div>
-
-         
-</main>
+        </section>
+    </main>
 </body>
+
 </html>
