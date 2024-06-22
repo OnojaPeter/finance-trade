@@ -11,81 +11,102 @@
     <script src="https://kit.fontawesome.com/899e264fca.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="container ">
+<body class=" ">
     <!-- navbar with ejs-->
 
-    <main class="">
-        <section>
-            <div class="mt-36">
-                <p class="text-5xl text-bold text-center">Newsroom</p>
-                <p class="text-xl pt-4 text-bold text-gray-500 text-center">Latest updates and Hand-picked resources.
+    <main class="max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
+        <section class="my-20">
+            <div class="">
+                <p class="text-3xl md:text-5xl text-bold text-center">Newsroom</p>
+                <p class="text-xl md:text-2xl pt-4 text-bold text-gray-500 text-center">Latest updates and Hand-picked resources.
                 </p>
             </div>
 
-            <div class="flex flex-row justify-between mt-24 mx-24 pr-4 border-transparent shadow">
+            <div class="flex flex-col md:flex-row justify-between mt-24  border-transparent shadow-lg">
                 <div class="">
-                    <img class="border rounded-tr-3xl rounded-br-3xl" src="img/post_1661635948.webp" alt="">
+                    <img class="border rounded-t-lg md:rounded-t-none md:rounded-tr-3xl md:rounded-br-3xl" src="img/post_1661635948.webp" alt="">
                 </div>
-                <div class="w-1/5">
-                    <a href="">
-                        <p class="text-bold text-3xl">Bank of Russia delivers another big rate hike to tame inflation
-                        </p>
-                    </a>
-                    <p class="text-gray-500 text-xs pt-6">The Bank of Russia delivered.....</p>
-                    <p class="mt-72 ml-28" id="date-container">Happy</p>
+                <div class="flex flex-col justify-between m-7 ">
+                    <div>
+                        <a href="">
+                            <p class="font-semibold text-2xl lg:text-3xl">Bank of Russia delivers another big rate hike to tame inflation
+                            </p>
+                        </a>
+                        <p class="ash-text pt-6">The Bank of Russia delivered.....</p>
+                    </div>
+
+                    <p class="text-end" id="date-container"></p>
                 </div>
             </div>
 
-            <div class="ml-24 mt-20">
-                <p class="text-bold text-xl">Latest News</p>
+            <div class="mt-20 mb-8">
+                <p class="font-semibold text-lg">Latest News</p>
             </div>
-            <div class="mx-24 flex flex-col items-center ">
-                <div class="flex flex-row justify-between mb-10">
-                    <div class="mr-10 border-transparent shadow">
+
+            <div class="flex flex-col items-center ">
+                <div class="flex flex-col md:flex-row gap-6 mb-6 md:mb-10">
+                    <div class=" border-transparent shadow-lg">
                         <img class="border rounded-b-3xl" src="img/post_1661636242.webp" alt="">
-                        <p class="text-bold text-2xl mx-6 pt-4">Europe’s Top Central Banks Take Divergent Tracks as They
-                            Confront Inflation</p>
-                        <p class="text-sm text-gray-500 mx-6 pt-4">Europe’s foremost central banks took diverging policy
-                            pat.....</p>
-                        <p class="mt-24 ml-48 mb-2 text-gray-500" id="date-container-two">Happy</p>
+                        <div class="flex flex-col justify-between m-7">
+                            <p class="text-bold text-2xl ">Europe’s Top Central Banks Take Divergent Tracks as They
+                                Confront Inflation</p>
+                            <p class="ash-text pt-4">Europe’s foremost central banks took diverging policy
+                                pat.....</p>
+                            <p class="ash-text text-end date-two"></p>
+                        </div>
                     </div>
-                    <div class="mr-10 border-transparent shadow">
+
+                    <div class=" border-transparent shadow-lg">
                         <img class="border rounded-b-3xl" src="img/post_1661636067.webp" alt="">
-                        <p class="text-bold text-2xl mx-6 pt-4">Finance Review 2021 – What You Need to Know</p>
-                        <p class="text-sm text-gray-500 mx-6 pt-4">Finance is a disruptive trading platform that.....
-                        </p>
-                        <p class="mt-24 ml-48 pb-4 text-gray-500" id="date-container-two">Happy</p>
+                        <div class="flex flex-col justify-between m-7">
+                            <p class="text-bold text-2xl ">Finance Review 2021 – What You Need to Know</p>
+                            <p class="ash-text pt-4">Finance is a disruptive trading platform that.....
+                            </p>
+                            <p class="ash-text text-end date-two"></p>
+                        </div>
                     </div>
-                    <div class="mr-10 border-transparent shadow">
+
+                    <div class=" border-transparent shadow-lg">
                         <img class="border rounded-b-3xl w-max" src="img/post_1661636067.webp" alt="">
-                        <p class="text-bold text-2xl mx-6 pt-4">Finance and JP Morgan Enter a Lucrative Partnership</p>
-                        <p class="text-sm text-gray-500 mx-6 pt-4">Finance, which has become a leading investmen.....
-                        </p>
-                        <p class="mt-24 ml-48 pb-4 text-gray-500" id="date-container-two">Happy</p>
+                        <div class="flex flex-col justify-between m-7">
+                            <p class="text-bold text-2xl ">Finance and JP Morgan Enter a Lucrative Partnership</p>
+                            <p class="ash-text pt-4">Finance, which has become a leading investmen.....
+                            </p>
+                            <p class="ash-text text-end date-two"></p>
+                        </div>
                     </div>
                 </div>
-                <div class="flex flex-row justify-between mt-10">
-                    <div class="mr-10 border-transparent shadow">
+
+                <div class="flex flex-col md:flex-row gap-6 md:mt-10">
+                    <div class=" border-transparent shadow-lg">
                         <img class="border rounded-b-3xl" src="img/post_1661636000.webp" alt="">
-                        <p class="text-bold text-2xl mx-6 pt-4">Bank of Russia delivers another big rate hike to tame
-                            inflation</p>
-                        <p class="text-sm text-gray-500 mx-6 pt-4">The Bank of Russia delivered.....</p>
-                        <p class="mt-24 ml-48 mb-2 text-gray-500" id="date-container-two">Happy</p>
+                        <div class="flex flex-col justify-between m-7">
+                            <p class="text-bold text-2xl ">Bank of Russia delivers another big rate hike to tame
+                                inflation</p>
+                            <p class="ash-text pt-4">The Bank of Russia delivered.....</p>
+                            <p class="ash-text text-end date-two"></p>
+                        </div>
                     </div>
-                    <div class="mr-10 border-transparent shadow">
+
+                    <div class=" border-transparent shadow-lg">
                         <img class="border rounded-b-3xl" src="img/post_1661636000.webp" alt="">
-                        <p class="text-bold text-2xl mx-6 pt-4">Bank of Mexico Accelerates Interest-Rate Increases</p>
-                        <p class="text-sm text-gray-500 mx-6 pt-4">The Bank of Mexico stepped up the pace of
-                            interest-rate i.....</p>
-                        <p class="mt-24 ml-48 pb-4 text-gray-500" id="date-container-two">Happy</p>
+                        <div class="flex flex-col justify-between m-7">
+                            <p class="text-bold text-2xl ">Bank of Mexico Accelerates Interest-Rate Increases</p>
+                            <p class="ash-text pt-4">The Bank of Mexico stepped up the pace of
+                                interest-rate i.....</p>
+                            <p class="ash-text text-end date-two"></p>
+                        </div>
                     </div>
-                    <div class="mr-10 border-transparent shadow">
+
+                    <div class=" border-transparent shadow-lg">
                         <img class="border rounded-b-3xl w-max" src="img/post_1661636000.webp" alt="">
-                        <p class="text-bold text-2xl mx-6 pt-4">Jobless Claims Rose Last Week But Remained Near
-                            Decades-Low</p>
-                        <p class="text-sm text-gray-500 mx-6 pt-4">The number of Americans applying for unemployment
-                            benefit......</p>
-                        <p class="mt-24 ml-48 pb-4 text-gray-500" id="date-container-two">Happy</p>
+                        <div class="flex flex-col justify-between m-7">
+                            <p class="text-bold text-2xl ">Jobless Claims Rose Last Week But Remained Near
+                                Decades-Low</p>
+                            <p class="ash-text pt-4">The number of Americans applying for unemployment
+                                benefit......</p>
+                            <p class="ash-text text-end date-two"></p>
+                        </div>
                     </div>
                 </div>
 
@@ -101,12 +122,15 @@
         const date = new Date();
         const filteredDate = date.toLocaleString('en-us', { year: "numeric", month: "short", day: "numeric" })
         container.innerHTML = filteredDate
-    </script>
-    <script>
-        const containers = document.getElementById('date-container-two')
+
+        const containers = document.querySelectorAll('.date-two')
         const dateTwo = new Date();
         const filteredDateTwo = dateTwo.toLocaleString('en-us', { year: "numeric", month: "short", day: "numeric" })
-        containers.innerHTML = filteredDateTwo
+        
+        containers.forEach((container) => {
+            return container.innerText = filteredDateTwo
+        })
+        
     </script>
 </body>
 
