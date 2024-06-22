@@ -1,180 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/899e264fca.js" crossorigin="anonymous"></script>
 </head>
-<body class="container ">
 
-    <div class="bg-bgabout bg-cover bg-no-repeat bg-top">
-      <!-- navbar -->
-      <nav class="relative container pt-14 mx-14 p-6 mx-40">
-        <!-- flex container -->
-        <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <div class="pt-2">
-                <img src="/img/logo.svg" alt="">
-            </div>
-            <!-- Menu Items -->
-            <div class="hidden space-x-6 mr-10 md:flex ">
-                <a href="#" class="hover:text-darkGrayishBlue">About us</a>
-                <a href="#" class="hover:text-darkGrayishBlue">Blog</a>
-                <a href="#" class="hover:text-darkGrayishBlue">FAQs</a>
-                <a href="#" class="hover:text-darkGrayishBlue">Contact Us</a>
-                <a href="#" class="hover:text-darkGrayishBlue">More Pages</a>
-                <a href="#" class="hover:text-darkGrayishBlue">Sign In </a>
-            </div>
-            <!-- Button -->
-            <!-- <a href="" class="hidden p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight md:block">Get Started</a> -->
-              <!-- Hamburger Icon  -->
-        <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
-            <span class="hamburger-top"></span>
-            <span class="hamburger-middle"></span>
-            <span class="hamburger-bottom"></span>
-        </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden">
-            <div id="menu" class="absolute flex-col items-center self-end py-8 mt-10 space-y-6 hidden font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-                <a href="">Pricing</a>
-                <a href="">Product</a>
-                <a href="">About Us</a>
-                <a href="">Careers</a>
-                <a href="">Community</a>
-            </div>
-        </div>
-</nav>
-<main class="mx-16">
-    <div class="container pb-14 ml-20 mr-10">
-        <div class="text-center text-4xl font-bold mt-20 ">Contact Us</div>
-        <div class="mt-2 ml-20 text-center text-gray-500 mr-20 text-lg">We love to talk about how we can help you.</div>
-        </div>
+<body class=" ">
+    <!-- navbar from ejs-->
 
-        <div class="flex flex-row justify-around">
-            <div class="text-center border-white shadow-2xl ml-28">
-                <a href="">
-                <img class="w-2/12 pb-4 pt-10 ml-52" src="img/icon-7.svg" alt="">
-                <p class="font-bold pb-2 text-xl">Knowledgebase</p>
-                <p class="pb-4 text-gray-500">We are here to help you with any questions or code</p>
-                <hr>
-                <p class="text-blue-500 pt-4 pb-4">Create Ticket  ></p>
-            </a>
-            </div>
-            <div class="text-center border-white shadow-2xl mr-28">
-                <a href="">
-                <img class="w-2/12 pb-4 pt-10 ml-52" src="img/icon-4.svg" alt="">
-                <p class="font-bold pb-2 text-xl">FAQ</p>
-                <p class="pb-4 text-gray-500">Search our FAQs for answers to anything you might ask.</p>
-                <hr>
-                <p class="text-blue-500 pt-4 pb-4">Visit FAQ  ></p>
-            </a>
+    <main class="max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
+        <section class="my-20">
+            <div class="container pb-14 ">
+                <div class="text-center text-4xl font-bold mt-20 ">Contact Us</div>
+                <div class="mt-2 text-center text-gray-500  text-lg">We love to talk about how we can help
+                    you.</div>
             </div>
 
-        </div>
-    </div>
-    <div>
-        <p class="text-2xl font-bold text-center mt-28">Tell us about yourself</p>
-        <p class="text-gray-500 text-center">Whether you have questions or you would just like to say hello, contact us.</p>
-            <form action="">
-        <div class="container flex flex-col items-center mt-14 ">
-                <div class="flex flex-row justify-around">
-                    <div class=" mx-8">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="">Your Name</label>
-                    <input placeholder="Scott Marshal" class="shadow appearance-none border rounded w-96 h-12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text">
-                     </div>
-                     <div>
-                    <label class="block text-gray-700 text-sm font-bold mb-2"  for="">Your Email Address</label>
-                    <input placeholder="a@b.com" class="shadow appearance-none border rounded w-96 h-12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text">
+            <div class="flex flex-col md:flex-row gap-5 md:gap-10 justify-center">
+                
+                <div class="text-center border-white shadow-2xl">
+                    <a href="">
+                        <div class="py-10 flex flex-col gap-6">
+                           
+                            <div class="flex justify-center"><img class="w-2/12 " src="img/icon-7.svg" alt=""></div>
+                            
+                            <div class="px-20 flex flex-col gap-3">
+                                <p class="font-bold text-xl">Knowledgebase</p>
+                                <p class="text-gray-500">We are here to help you with any questions or code</p>
+                            </div>
+                            
+                            <div class="flex flex-col gap-6">
+                                <hr>
+                                <p class="text-blue-500 ">Create Ticket ></p>
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+                <div class="text-center border-white shadow-2xl">
+                    <a href="">
+                        <div class="py-10 flex flex-col gap-6">
+                            <div class="flex justify-center"><img class="w-2/12 " src="img/icon-4.svg" alt=""></div>
+
+                            <div class="px-20 flex flex-col gap-3">
+                                <p class="font-bold text-xl">FAQ</p>
+                                <p class="text-gray-500">Search our FAQs for answers to anything you might ask.</p>
+                            </div>
+                            
+                            <div class="flex flex-col gap-6">
+                                <hr>
+                                <p class="text-blue-500 ">Visit FAQ ></p>
+                            </div>
+                            
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <div>
+                <p class="text-3xl font-bold text-center mt-28">Tell us about yourself</p>
+                <p class="text-gray-500 text-center px-5">Whether you have questions or you would just like to say hello,
+                    contact
+                    us.
+                </p>
+                <form action="" class="px-5 md:20 lg:px-30 xl:px-40">
+                    <div class=" flex flex-col items-center gap-6 mt-14 ">
+                        <div class="flex flex-col md:flex-row gap-5 lg:gap-10 w-full">
+                            <div class=" w-full">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="">Your Name</label>
+                                <input placeholder="Scott Marshal"
+                                    class="shadow appearance-none border rounded w-full h-12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="text">
+                            </div>
+                            <div class="w-full">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="">Your Email
+                                    Address</label>
+                                <input placeholder="a@b.com"
+                                    class="shadow appearance-none border rounded w-full h-12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="text">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-5 lg:gap-10 w-full">
+                            <div class="w-full">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="">Subject</label>
+                                <input placeholder="Investment Plans"
+                                    class="shadow appearance-none border rounded w-full h-12  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="text">
+                            </div>
+                            <div class="w-full">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="">Your Phone
+                                    Number</label>
+                                <input placeholder="1-234-5678-4567"
+                                    class="shadow appearance-none border rounded w-full h-12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="text">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="flex flex-row justify-around pt-6">
-                    <div class="mx-8">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="">Subject</label>
-                    <input placeholder="Investment Plans" class="shadow appearance-none border rounded w-96 h-12  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text">
-                     </div>
-                     <div>
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="">Your Phone Number</label>
-                    <input placeholder="1-234-5678-4567" class="shadow appearance-none border rounded w-96 h-12 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text">
-                      </div>
-                </div>
-        </div>
-        <div class="mx-72 mt-6">
-            <div class="mx-6 ml-12">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="">How can we help you?</label>
-            <input placeholder="Hi, i would like to ............." class="shadow appearance-none border rounded  py-2 pb-32 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text">
+                    <div class=" mt-6">
+                        <div class=" ">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="">How can we help
+                                you?</label>
+                            <textarea placeholder="Hi, i would like to ............."
+                                class="shadow appearance-none border rounded  py-2 pb-32 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                type="text"></textarea>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <button class="border rounded px-12 py-3 bg-blue-500  mt-10 text-white">Submit</button>
+                        <p class="text-xs text-gray-500  mt-4"> We will get back to you in 1-2 business days.</p>
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="mx-72">
-        <button class="border rounded px-12 py-3 bg-blue-500 mx-96 mt-10 text-white">Submit</button>
-        <p class="text-xs text-gray-500 ml-80 mt-4"> We will get back to you in 1-2 business days.</p>
-    </div>
-            </form>
-    </div>
-         
-</main>
-<footer class="bg-lightwhite mt-10">
-    <div class="relative container mx-20 p-6 ">
-    <div class="mx-16 mt-20 flex flex-row justify-between">
-        <div>
-            
-            <!-- <img class="pb-10" src="/img/logo.svg" alt=""> -->
-            <ul>
-                <li class="pb-4"> <a class="text-gray-500 hover:text-blue-500" href="">CALIFORNIA</a> </li> 
-                <li class="pb-4"> <a class="text-gray-500 hover:text-blue-500" href="">+1(000) finance</a> </li>
-                <li> <a class="text-gray-500 hover:text-blue-500" href="">support@finance</a> </li>
-             </ul>
-        </div>
-        <div>
-            <p class="font-bold pb-10">Quick Links</p>
-            <ul>
-           <li class="pb-4"> <a class="text-gray-500 hover:text-blue-500" href="">Standard Plans</a> </li> 
-           <li> <a class="text-gray-500 hover:text-blue-500" href="">Affiliate System</a> </li>
-        </ul>
-        </div>
-        <div>
-            <p class="font-bold pb-10">Company</p>
-            <ul>
-                <li class="pb-4"><a class="text-gray-500 hover:text-blue-500" href="">About Us</a></li>
-                <li class="pb-4"> <a class="text-gray-500 hover:text-blue-500" href="">Reach Us</a></li>
-                <li class="pb-4"><a class="text-gray-500 hover:text-blue-500" href="">FAQs</a></li>
-                <li><a class="text-gray-500 hover:text-blue-500" href="">Blogs</a></li>
-            </ul>
-        </div>
-        <div>
-            <p class="font-bold pb-10">More</p>
-            <ul>
-                <li class="pb-4"><a class="text-gray-500 hover:text-blue-500" href="">Cryptocurrency</a></li>
-                <li class="pb-4"><a class="text-gray-500 hover:text-blue-500" href="">Affiliate and Partners</a></li>
-                <li class="pb-4"><a class="text-gray-500 hover:text-blue-500" href="">Stocks</a></li>
-            </ul>
-        </div>
-        <div>
-            <p class="font-bold pb-10">Resources</p>
-            <ul>
-                <li class="pb-4"><a class="text-gray-500 hover:text-blue-500" href="">Raise a Dispute</a></li>
-                <li><a class="text-gray-500 hover:text-blue-500" href="">Your Account</a></li>
-            </ul>
-        </div>
-    </div>
-    <hr class="mx-16 mt-20">
-    <div class="mx-16 mt-6 flex flex-row justify-between">
-        <div>
-            <p class=" text-sm font-bold text-gray-500 "><a class="hover:text-blue-500" href="">Privacy Policy     </a>/ <a class="hover:text-blue-500" href="">    Terms & Conditions</a>  </p>
-        </div>
-        <div>
-            <i class="fa-brands fa-instagram fa-xs border-2 px-1 py-2 mx-1 bg-gray-200 rounded-md" style="color: #808080;"></i>
-            <i class="fa-brands fa-twitter fa-xs border-2 px-1 py-2 mx-1 bg-gray-200 rounded-md" style="color: #808080;"></i>
-            <i class="fa-brands fa-whatsapp fa-xs border-2 px-1 py-2 mx-1 bg-gray-200 rounded-md" style="color: #808080;"></i>
-        </div>
-    </div>
-    <div>
-        <p class="text-center mt-10 text-sm text-gray-300">©  Finance. 2023. All rights reserved.</p>
-        <p class="text-center mt-6 text-sm text-gray-300 w-4/6 relative left-48">When you visit or interact with our sites, services or tools, we or our authorised service providers may use cookies for storing information to help provide you with a better, faster and safer experience and for marketing purposes.</p>
-    </div>
-</div>
-</footer>
+        </section>
+    </main>
+    <!-- footer from ejs-->
 </body>
+
 </html>
