@@ -20,10 +20,10 @@
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal" x-data="{ sidebarOpen: false }" @click.away="sidebarOpen = false">
 
-    <div class="flex flex-col lg:flex-row min-h-screen">
+    <div class="flex flex-col xl:flex-row min-h-screen">
         <!-- Sidebar -->
          <!-- Hamburger Menu for smaller Screens -->
-        <div class="lg:hidden py-4 px-6 bg-white shadow-2xl flex justify-between  items-center">
+        <div class="xl:hidden py-4 px-6 bg-white shadow-2xl flex justify-between  items-center">
             <div @click="sidebarOpen = true" class="  flex gap-1 items-center">
                 <h1 class="text-sm font-bold">MENU</h1>
                 <button  class="focus:outline-none">
@@ -45,13 +45,13 @@
             </div>
         </div>
 
-        <nav :class="{'translate-x-0': sidebarOpen, '-translate-x-full': !sidebarOpen}" class=" bg-white shadow-2xl w-64 fixed lg:relative transform lg:transform-none transition-transform duration-300 ease-in-out lg:translate-x-0 h-full lg:h-auto z-50 lg:flex flex-col overflow-y-auto">
+        <nav :class="{'translate-x-0': sidebarOpen, '-translate-x-full': !sidebarOpen}" class=" bg-white shadow-2xl w-64 fixed xl:relative transform xl:transform-none transition-transform duration-300 ease-in-out xl:translate-x-0 h-full xl:h-auto z-50 xl:flex flex-col overflow-y-auto">
             <!-- <div class="p-4">
                 <h1 class="text-2xl font-bold">LOGO HERE</h1>
             </div> -->
             <div class="p-4 flex justify-between items-center">
                 <h1 class="text-2xl font-bold">LOGO HERE</h1>
-                <button @click="sidebarOpen = false" class="focus:outline-none lg:hidden">
+                <button @click="sidebarOpen = false" class="focus:outline-none xl:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -68,7 +68,7 @@
                     <a href="" class="bg-blue-800 hover:bg-blue-900 px-3 py-2 text-white font-semibold rounded">
                         <button>Deposit</button>
                     </a>
-                    <a href="" class="bg-gray-800 hover:bg-gray-900 px-3 py-2 text-white rounded">
+                    <a href="" class="bg-gray-800 hover:bg-gray-900 px-2 py-2 text-white rounded">
                         <button>Withdraw</button>
                     </a>
                 </div>
@@ -114,7 +114,7 @@
         <!-- Main Content -->
         <main class="flex-grow bg-gray-100 min-h-screen p-6">
             <!-- Top Bar -->
-            <div class="hidden lg:flex justify-between items-center bg-white p-4 rounded shadow ">
+            <div class="hidden xl:flex justify-between items-center bg-white p-4 rounded shadow ">
                 <div class="font-bold text-xl">Dashboard</div>
                 <div x-data="{ open: false }" class="relative">
                     <button @click="open = !open" class="focus:outline-none">
@@ -129,10 +129,93 @@
             </div>
 
             <!-- Dashboard Content -->
-            <div class="mt-8 max-page-width bg-white p-4 rounded shadow">
+            <!-- <div class="mt-8 max-page-width bg-white p-4 rounded shadow">
                 <h2 class="text-2xl font-bold mb-4">Welcome to Your Dashboard</h2>
                 <p class="text-gray-700">Here you can view your investment stats, manage deposits and withdrawals, and more.</p>
-                <!-- Add more content as needed -->
+                
+            </div> -->
+            <div class="xl:container mx-auto pt-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold mb-4">Successful Deposits</h2>
+                        <p class="text-2xl font-bold text-green-500">0.00 USD</p>
+                        <div class="mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left p-2">Submitted</th>
+                                        <th class="text-left p-2">Pending</th>
+                                        <th class="text-left p-2">Rejected</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-2">0.00</td>
+                                        <td class="p-2">0.00</td>
+                                        <td class="p-2">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr class="my-4 ">
+                        <p class="italic text-sm">You've requested to deposit $0.00. Where $0.00 is just initiated but not submitted.</p>
+                    </div>
+        
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold mb-4">Successful Withdrawals</h2>
+                        <p class="text-2xl font-bold text-green-500">0.00 USD</p>
+                        <div class="mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left p-2">Submitted</th>
+                                        <th class="text-left p-2">Pending</th>
+                                        <th class="text-left p-2">Rejected</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-2">0.00</td>
+                                        <td class="p-2">0.00</td>
+                                        <td class="p-2">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr class="my-4 ">
+                        <p class="italic text-sm">You've requested to withdraw $0.00. Where $0.00 is just initiated but not submitted.</p>
+                    </div>
+        
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold mb-4">Total Investments</h2>
+                        <p class="text-2xl font-bold text-blue-500">0.00 USD</p>
+                        <div class="mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left p-2">Submitted</th>
+                                        <th class="text-left p-2">Pending</th>
+                                        <th class="text-left p-2">Rejected</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="p-2">0.00</td>
+                                        <td class="p-2">0.00</td>
+                                        <td class="p-2">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr class="my-4">
+                        <p class="italic text-sm">You've invested $0.00 from the deposit wallet and $0.00 from the interest wallet</p>
+                    </div>
+        
+                </div>
             </div>
         </main>
     </div>
