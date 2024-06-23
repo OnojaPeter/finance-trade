@@ -18,7 +18,7 @@
     }
 </style>
 
-<body class="bg-gray-100 font-sans leading-normal tracking-normal" x-data="{ sidebarOpen: false }" @click.away="sidebarOpen = false">
+<body class="bg-gray-100 font-sans leading-normal tracking-normal" x-data="{ sidebarOpen: false, modalOpen: false, selectedPlan: null, plans: [{name: 'Basic Plan', minInvest: 1000, maxInvest: 6000, interest: 15, duration: 168}, {name: 'Standard Plan', minInvest: 6000, maxInvest: 10000, interest: 20, duration: 240}, {name: 'Advanced Plan', minInvest: 10000, maxInvest: 20000, interest: 25, duration: 336}] }" @click.away="sidebarOpen = false">
 
     <div class="flex flex-col xl:flex-row min-h-screen">
         <!-- Sidebar -->
@@ -78,7 +78,7 @@
                 <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
                         <img class="h-6 w-6 mr-2" src="img/dashboard.png" alt=""> Dashboard
                     </a></li>
-                    <li><a href="/profile-investment.html" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
+                    <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
                         <img class="h-6 w-6 mr-2" src="img/investment.png" alt=""> Investment
                     </a></li>
                 <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
@@ -135,91 +135,112 @@
                 
             </div> -->
             <div class="xl:container mx-auto pt-4">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        
-                    <!-- Card 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold mb-4">Successful Deposits</h2>
-                        <p class="text-2xl font-bold text-green-500">0.00 USD</p>
-                        <div class="mt-4">
-                            <table class="w-full">
-                                <thead>
-                                    <tr>
-                                        <th class="text-left p-2">Submitted</th>
-                                        <th class="text-left p-2">Pending</th>
-                                        <th class="text-left p-2">Rejected</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="p-2">0.00</td>
-                                        <td class="p-2">0.00</td>
-                                        <td class="p-2">0.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Basic Plan Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col gap-7">
+                        <div class="text-center">
+                            <h2 class="text-2xl font-bold mb-2">Basic Plan</h2>
+                            <p class="text-lg  text-green-500 mb-2">Total 30% ROI</p>
+                            <p class="text-6xl font-semibold mb-2">15.00%</p>
+                            <p class="mb-2">EVERY 7 DAYS FOR 2 7 Days</p>
                         </div>
-                        <hr class="my-4 ">
-                        <p class="italic text-sm">You've requested to deposit $0.00. Where $0.00 is just initiated but not submitted.</p>
+
+                        <div>
+                            <p class="mb-2 flex justify-between"> <span>Investment:</span> <span>$1,000.00 - $6,000.00</span> </p>
+                            <p class="mb-2 flex justify-between"> <span>Max. Earn:</span> <span>1800 USD</span></p>
+                            <p class="mb-2 flex justify-between"> <span>Total Return:</span> <span>capital + 30%</span></p>
+                            <p class="mb-4">Compound interest available</p>
+                        </div>    
+                       
+                        <button @click="selectedPlan = plans[0]; modalOpen = true" class="w-full py-2 bg-blue-800 text-white rounded-md hover:bg-blue-900 font-semibold">Invest Now</button>
                     </div>
-        
-                    <!-- Card 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold mb-4">Successful Withdrawals</h2>
-                        <p class="text-2xl font-bold text-green-500">0.00 USD</p>
-                        <div class="mt-4">
-                            <table class="w-full">
-                                <thead>
-                                    <tr>
-                                        <th class="text-left p-2">Submitted</th>
-                                        <th class="text-left p-2">Pending</th>
-                                        <th class="text-left p-2">Rejected</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="p-2">0.00</td>
-                                        <td class="p-2">0.00</td>
-                                        <td class="p-2">0.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                    <!-- Standard Plan Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col gap-7" >
+                        <div class="text-center">
+                            <h2 class="text-2xl font-bold mb-2">Standard Plan</h2>
+                            <p class="text-lg  text-green-500 mb-2">Total 160% ROI</p>
+                            <p class="text-6xl font-semibold mb-2">80.00%</p>
+                            <p class="mb-2">EVERY 1 MONTH FOR 2 1 Month</p>
                         </div>
-                        <hr class="my-4 ">
-                        <p class="italic text-sm">You've requested to withdraw $0.00. Where $0.00 is just initiated but not submitted.</p>
-                    </div>
-        
-                    <!-- Card 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold mb-4">Total Investments</h2>
-                        <p class="text-2xl font-bold text-blue-500">0.00 USD</p>
-                        <div class="mt-4">
-                            <table class="w-full">
-                                <thead>
-                                    <tr>
-                                        <th class="text-left p-2">Submitted</th>
-                                        <th class="text-left p-2">Pending</th>
-                                        <th class="text-left p-2">Rejected</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="p-2">0.00</td>
-                                        <td class="p-2">0.00</td>
-                                        <td class="p-2">0.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <div>
+                            <p class="mb-2 flex justify-between"> <span>Investment:</span> <span>$6,000.00 - $19,000.00</span> </p>
+                            <p class="mb-2 flex justify-between"> <span>Max. Earn:</span> <span>30400 USD</span></p>
+                            <p class="mb-2 flex justify-between"> <span>Total Return:</span> <span>capital + 160%</span></p>
+                            <p class="mb-4">Compound interest available</p>
                         </div>
-                        <hr class="my-4">
-                        <p class="italic text-sm">You've invested $0.00 from the deposit wallet and $0.00 from the interest wallet</p>
+                        
+                        <button @click="selectedPlan = plans[1]; modalOpen = true" class="w-full py-2 bg-blue-800 text-white rounded-md hover:bg-blue-900 font-semibold">Invest Now</button>
                     </div>
-        
+
+                    <!-- Advanced Plan Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col gap-7">
+                        <div class="text-center">
+                            <h2 class="text-2xl font-bold mb-2">Advanced Plan</h2>
+                            <p class="text-lg  text-green-500 mb-2">UNLIMITED ROI</p>
+                            <p class="text-6xl font-semibold mb-2">160.00%</p>
+                            <p class="mb-2">EVERY 40 DAYS FOR LIFETIME</p>
+                        </div>
+
+                        <div>
+                            <p class="mb-2 flex justify-between"> <span>Investment:</span> <span>$20,000.00 - $1,000,000.00</span> </p>
+                            <p class="mb-2 flex justify-between"> <span>Max. Earn:</span> <span>Unlimited</span></p>
+                            <p class="mb-2 flex justify-between"> <span>Total Return:</span> <span>Unlimited</span></p>
+                            <p class="mb-4">Compound interest available</p>
+                        </div>
+                        
+                        <button @click="selectedPlan = plans[2]; modalOpen = true" class="w-full py-2 bg-blue-800 text-white rounded-md hover:bg-blue-900 font-semibold">Invest Now</button>
+                    </div>
                 </div>
             </div>
+
+             
+
         </main>
     </div>
 
+    <!-- Modal -->
+    <div x-show="modalOpen" x-transition class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" x-cloak>
+        <div class="bg-white p-8 rounded-lg shadow-lg w-11/12 max-w-lg relative max-h-screen overflow-y-auto">
+            <button @click="modalOpen = false" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <h2 class="text-2xl font-bold mb-4" x-text="'Confirm to invest on ' + (selectedPlan ? selectedPlan.name : '')"></h2>
+            <p class="mb-2" x-text="'Invest: $' + (selectedPlan ? selectedPlan.minInvest : '') + ' - $' + (selectedPlan ? selectedPlan.maxInvest : '')"></p>
+            <p class="mb-2" x-text="'Interest: ' + (selectedPlan ? selectedPlan.interest : '') + '%'"></p>
+            <p class="mb-4" x-text="'Every ' + (selectedPlan ? selectedPlan.duration : '') + ' hours for 2 times'"></p>
+
+            <div class="mb-4">
+                <label class="block text-gray-700">Pay Via</label>
+                <select class="w-full p-2 border rounded-md">
+                    <option>Select One</option>
+                    <option>Bank Transfer</option>
+                    <option>Credit Card</option>
+                    <option>Cryptocurrency</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700">Invest Amount</label>
+                <input type="number" class="w-full p-2 border rounded-md" placeholder="USD">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700">Compound Interest (optional)</label>
+                <input type="number" class="w-full p-2 border rounded-md" placeholder="Times">
+                <p class="text-sm text-gray-500 mt-2">Your interest will add to the investment capital amount for a specific time that you're entering.</p>
+            </div>
+
+            <div class="flex justify-end">
+                <button @click="modalOpen = false" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 mr-2">Cancel</button>
+                <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Confirm</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
