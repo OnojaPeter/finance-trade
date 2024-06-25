@@ -135,41 +135,44 @@
                 
             </div> -->
             <div class="xl:container mx-auto pt-4">
-                <div class="max-w-xl mx-auto">
+                <div class="max-w-xl mx-auto ">
                     <div class="">
-                        <h2 class="text-3xl font-medium mb-4">Deposit Funds</h2>
-                        <p class="mb-4 text-sm text-gray-600">Add funds using our system's gateway. The deposited amount will be credited to the deposit wallet. You'll just make investments from this wallet.</p>
-    
+                        <h2 class="text-3xl font-medium mb-4">Withdraw Funds</h2>
+                        <p class="text-gray-700 mb-6">Use this form to withdraw funds from your account. Please fill out the necessary information and submit.</p>
+
                         <div class="justify-end flex mb-4">
-                            <p class="py-1 px-3 bg-gray-600 text-white rounded">Deposit History</p>
+                            <p class="py-1 px-3 bg-gray-600 text-white rounded">Withdraw History</p>
                         </div>
 
                         <div class="bg-white shadow-lg rounded-lg border-2 p-6">
-                            <div class="mb-4">
-                                <label class="block text-gray-700 mb-2">Select Gateway</label>
-                                <select class="w-full p-2 border rounded-md">
-                                    <option>Select One</option>
-                                    <option>Bank Transfer</option>
-                                    <option>Credit Card</option>
-                                    <option>Cryptocurrency</option>
-                                </select>
-                            </div>
-        
-                            <div class="mb-4">
-                                <label class="block text-gray-700 mb-2">Amount</label>
-                                <div class="flex justify-between">
-                                    <input type="number" class="w-full p-2 border rounded-tl-md rounded-bl-md">
-                                    <div class="bg-gray-200 border rounded-tr-md rounded-br-md px-3 flex items-center">
-                                        <p class="text-gray-600 font-medium">USD</p>
-                                    </div>
-                                </div>                               
-                            </div>
-        
-                            <button class="w-full py-2 bg-blue-800 text-white rounded-md hover:bg-blue-900 font-semibold">Submit</button>
+                            <form action="#" method="POST">
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 font-medium mb-2" for="gateway">Select Gateway</label>
+                                    <select id="gateway" name="gateway" class="block w-full bg-gray-100 border border-gray-300 rounded-md p-3">
+                                        <option value="">Select One</option>
+                                        <option value="bank">Bank Transfer</option>
+                                        <option value="paypal">PayPal</option>
+                                        <option value="crypto">Cryptocurrency</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 mb-2">Amount</label>
+                                    <div class="flex justify-between">
+                                        <input type="number" class="w-full p-2 border rounded-tl-md rounded-bl-md">
+                                        <div class="bg-gray-200 border rounded-tr-md rounded-br-md px-3 flex items-center">
+                                            <p class="text-gray-600 font-medium">USD</p>
+                                        </div>
+                                    </div>          
+                                </div>
+
+                                <div class="flex items-center justify-between">
+                                    <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-semibold py-2 w-full rounded-md focus:outline-none focus:shadow-outline">Submit</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
         </main>
     </div>
 
