@@ -23,6 +23,14 @@
     .card:hover {
         transform: translateY(-5px);
     }
+    .header {
+        background-color: #4A5568;
+        color: white;
+    }
+
+    .table-header {
+        background-color: #EDF2F7;
+    }
 </style>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal" x-data="{ sidebarOpen: false }" @click.away="sidebarOpen = false">
@@ -104,57 +112,43 @@
 
         <!-- Main Content -->
         <main class="flex-grow bg-gray-100 min-h-screen p-6">
-            <!-- Dashboard Content -->
+            <!-- Deposits Page Content -->
             <div class="xl:container mx-auto pt-4">
-                <h2 class="text-2xl font-bold mb-6">Dashboard</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Summary Cards -->
-                    <a href="admin-users.html">
-                        <div class="card bg-white p-6 rounded-lg shadow-lg">
-                            <h2 class="text-xl font-bold mb-2">Total Users</h2>
-                            <p class="text-gray-600 text-3xl">1500</p>
-                        </div>
-                    </a>
-
-                    <a href="admin-deposits.html">
-                        <div class="card bg-white p-6 rounded-lg shadow-lg">
-                            <h2 class="text-xl font-bold mb-2">Total Deposits</h2>
-                            <p class="text-gray-600 text-3xl">$50,000</p>
-                        </div>
-                    </a>
-
-                    <a href="admin-withdrawals.html">
-                        <div class="card bg-white p-6 rounded-lg shadow-lg">
-                            <h2 class="text-xl font-bold mb-2">Total Withdrawals</h2>
-                            <p class="text-gray-600 text-3xl">$20,000</p>
-                        </div>
-                    </a>
-                    
-                    <div class="card bg-white p-6 rounded-lg shadow-lg">
-                        <h2 class="text-xl font-bold mb-2">Total Investments</h2>
-                        <p class="text-gray-600 text-3xl">$30,000</p>
-                    </div>
-
-                    <a href="admin-support.html">
-                        <div class="card bg-white p-6 rounded-lg shadow-lg">
-                            <h2 class="text-xl font-bold mb-2">Support Tickets</h2>
-                            <p class="text-gray-600 text-3xl">25</p>
-                        </div>
-                    </a>
-
-                    <a href="admin-kyc.html">
-                        <div class="card bg-white p-6 rounded-lg shadow-lg">
-                            <h2 class="text-xl font-bold mb-2">Pending KYC</h2>
-                            <p class="text-gray-600 text-3xl">10</p>
-                        </div>
-                    </a>
-
+                <div class="header px-6 py-4">
+                    <h1 class="text-3xl font-semibold">Deposits</h1>
                 </div>
+                
+                <!-- Table -->
+                <table class="min-w-full bg-white">
+                    <thead class="table-header">
+                        <tr>
+                            <th class="px-2 sm:px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                            <th class="px-2 sm:px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>                           
+                            <th class="px-2 sm:px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-2 sm:px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <!-- Sample Deposit Data -->
+                        <tr>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">Alice John</td>                           
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">$300.00</td>                           
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">Completed</td>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">2024-06-05</td>
+                        </tr>
+                        <tr>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">Bob Brown</td>                           
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">$150.00</td>                           
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">Pending</td>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">2024-06-07</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
             </div>
+
         </main>
     </div>
 </body>
 
 </html>
-
