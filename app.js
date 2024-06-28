@@ -4,6 +4,7 @@ const MongoStore = require('connect-mongo');
 const dotenv = require('dotenv');
 const ejs = require('ejs');
 const express = require('express');
+const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const multer = require('multer');
@@ -17,6 +18,15 @@ dotenv.config();
 // Create an Express application
 const app = express();
 
+// Body parsers
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Static files
+app.use('/public', express.static('public'));
+app.use('/uploads', express.static('uploads'));
+app.use('css', express.static('public/css', { 'extensions': ['css']}));
 // Set up view engine
 app.set('view engine', 'ejs');
 
