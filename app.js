@@ -68,52 +68,11 @@ db.once('open', async() => {
 
 
 
-// Define routes
-app.get('/', (req, res) => {
-    res.render('home/home', { user: req.user });
-    // console.log(user)
-});
-app.get('/about', (req, res) => {
-    res.render('home/about', { user: req.user });
-    // console.log(user)
-});
+// ROUTES
+const homeRoute = require('./routes/homeRoute')
 
-app.get('/faq', (req, res) => {
-    res.render('home/home', { user: req.user });
-    // console.log(user)
-});
-
-app.get('/blog', (req, res) => {
-    res.render('home/blog', { user: req.user });
-    // console.log(user)
-});
-app.get('/crypto', (req, res) => {
-    res.render('home/crypto', { user: req.user });
-    // console.log(user)
-});
-
-app.get('/stocks', (req, res) => {
-    res.render('home/stocks', { user: req.user });
-    // console.log(user)
-});
-
-app.get('/affiliate', (req, res) => {
-    res.render('home/affiliate', { user: req.user });
-    // console.log(user)
-});
-
-app.get('/login', (req, res) => {
-    res.render('signin', { user: req.user });
-    // console.log(user)
-});
-
-app.get('/signup', (req, res) => {
-    res.render('signup', { user: req.user });
-    // console.log(user)
-});
-
-
-
+// APP.USE
+app.use('/', homeRoute);
 
 
 // Start the server
