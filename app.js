@@ -69,10 +69,14 @@ db.once('open', async() => {
 
 
 // ROUTES
-const homeRoute = require('./routes/homeRoute')
+const homeRoute = require('./routes/homeRoute');
+const profileRoute = require('./routes/profileRoute');
+const adminRoute = require('./routes/adminRoute')
 
 // APP.USE
 app.use('/', homeRoute);
+app.use('/profile', profileRoute);
+app.use('/admin', adminRoute);
 
 
 // Start the server
