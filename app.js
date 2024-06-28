@@ -87,10 +87,21 @@ app.get('/blog', (req, res) => {
     res.render('home/blog', { user: req.user });
     // console.log(user)
 });
-app.get('/contact', (req, res) => {
-    res.render('home/contact', { user: req.user });
+app.get('/crypto', (req, res) => {
+    res.render('home/crypto', { user: req.user });
     // console.log(user)
 });
+
+app.get('/stocks', (req, res) => {
+    res.render('home/stocks', { user: req.user });
+    // console.log(user)
+});
+
+app.get('/affiliate', (req, res) => {
+    res.render('home/affiliate', { user: req.user });
+    // console.log(user)
+});
+
 app.get('/login', (req, res) => {
     res.render('signin', { user: req.user });
     // console.log(user)
