@@ -71,7 +71,38 @@ db.once('open', async() => {
 // Define routes
 app.get('/', (req, res) => {
     res.render('home/home', { user: req.user });
-  });
+    // console.log(user)
+});
+app.get('/about', (req, res) => {
+    res.render('home/about', { user: req.user });
+    // console.log(user)
+});
+
+app.get('/faq', (req, res) => {
+    res.render('home/home', { user: req.user });
+    // console.log(user)
+});
+
+app.get('/blog', (req, res) => {
+    res.render('home/blog', { user: req.user });
+    // console.log(user)
+});
+app.get('/contact', (req, res) => {
+    res.render('home/contact', { user: req.user });
+    // console.log(user)
+});
+app.get('/login', (req, res) => {
+    res.render('signin', { user: req.user });
+    // console.log(user)
+});
+
+app.get('/signup', (req, res) => {
+    res.render('signup', { user: req.user });
+    // console.log(user)
+});
+
+
+
 
 
 // Start the server

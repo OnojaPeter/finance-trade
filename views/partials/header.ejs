@@ -1,0 +1,79 @@
+<header class="mt-4  md:mt-5  h-14  z-50 w-[100%] flex justify-center container max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
+    <nav class="flex flex-row justify-between h-14 items-center w-full ">
+        <!-- Desktop view -->
+        <div class="flex md:hidden w-[40%]">
+            <a href="/">
+                <h1 class="text-2xl font-bold">LOGO</h1>
+                <!-- <img class="cursor-pointer" src="" alt=" Logo"> -->
+            </a>
+        </div>
+        <a class="hidden md:flex" href="/">
+            <h1 class="text-2xl font-bold">LOGO</h1>
+            <!-- <img class="cursor-pointer" src="" alt=" Logo"> -->
+        </a>
+        <div class="gap-4 hidden md:flex md:gap-8 lg:gap-14 font-medium">
+            <a href="/" class="hover:underline hover:text-blue-600">Home</a>
+            <a href="/about" class="hover:underline hover:text-blue-600">About us</a>
+            <a href="/blog" class="hover:underline hover:text-blue-600">Blog</a>
+            <a href="/post-job" class="hover:underline hover:text-blue-600">FAQs</a>
+            <a href="/contact" class="hover:underline hover:text-blue-600">Contact Us</a>
+        </div>
+
+        <div class="gap-4 hidden md:flex md:gap-5 lg:gap-8 items-center font-medium">
+            <a href="/login" class="hover:bg-blue-500 hover:text-white px-2 lg:px-4 py-1 rounded-md">Login</a>
+            <a href="/signup" class="bg-blue-600 hover:bg-blue-700 text-white px-2 lg:px-4 py-1 rounded-md">Sign
+                Up</a>
+        </div>
+        <!-- hamburger button -->
+        <button id="hamburger" class="md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" id="hamburger-icon" class="h-7 w-7" fill="none"
+                viewBox="0 0 28 28" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M4 6h20M4 14h20m-7 8h7" />
+            </svg>
+        </button>
+    </nav>
+</header>
+
+<!-- Mobile view -->
+<div id="hamMenu" class=" top-14 right-0 bg-white p-4 z-50">
+    <!-- Close button -->
+    <button id="closeIcon" class="absolute top-0 right-0 mt-8 mr-4 sm:mr-12"><i
+            class="fa-solid fa-xmark fa-xl"></i></button>
+    <!-- Menu items -->
+    <div class="flex flex-col  mt-16">
+        <a href="/" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">Home</a>
+        <a href="/about" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">About us</a>
+        <a href="/blog" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">Blog</a>
+        <a href="/" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">FAQs</a>
+        <a href="/contact" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">Contact Us</a>
+
+        <a href="/login" class="hover:underline hover:text-blue-600 py-4 border-b nav-link">Login</a>
+        <a href="/signup" class="hover:underline hover:text-blue-600 py-4 nav-link">Sign Up</a>
+
+        <!-- <a href="login" class="hover:bg-[#10B981] hover:text-white hover:px-2 lg:px-4 py-2 mb-3 rounded-md border-b">Login</a>
+        <a href="signup" class="bg-[#10B981] hover:bg-green-700 px-2 lg:px-4 py-2 rounded-md text-white ">Sign Up</a> -->
+    </div>
+</div>
+
+<script>
+
+    const hamburger = document.getElementById('hamburger');
+    const hamMenu = document.getElementById('hamMenu');
+    const body = document.body;
+    const closeIcon = document.getElementById('closeIcon');
+
+    hamburger.addEventListener('click', function () {
+        // alert('p')
+        hamMenu.classList.toggle('open');
+        // closeIcon.classList.toggle('hidden');
+        // body.classList.toggle('menu-open');
+    });
+
+    closeIcon.addEventListener('click', function () {
+        hamMenu.classList.toggle('open');
+        closeIcon.classList.remove('open');
+        // body.classList.toggle('menu-open');
+    });
+
+</script>
