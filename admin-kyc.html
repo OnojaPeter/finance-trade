@@ -112,41 +112,49 @@
 
         <!-- Main Content -->
         <main class="flex-grow bg-gray-100 min-h-screen p-6">
-            <!-- Total Users Content -->
+            <!-- KYC Approval Page Content -->
             <div class="xl:container mx-auto pt-4">
                 <div class="header px-6 py-4">
-                    <h1 class="text-3xl font-semibold">Total Users</h1>
+                    <h1 class="text-3xl font-semibold">KYC Approvals</h1>
                 </div>
                 
                 <!-- Table -->
                 <table class="min-w-full bg-white">
                     <thead class="table-header">
                         <tr>
+                            <th class="px-2 sm:px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User ID</th>
                             <th class="px-2 sm:px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
                             <th class="px-2 sm:px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                            <th class="px-2 sm:px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th class="px-2 sm:px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
-                        <!-- Sample User Data -->
+                        <!-- Sample KYC Data -->
                         <tr>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">123456</td>
                             <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">John Doe</td>
                             <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">john.doe@example.com</td>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">Pending</td>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Approve</button>
+                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Reject</button>
+                            </td>
                         </tr>
                         <tr>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">789012</td>
                             <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">Jane Smith</td>
                             <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">jane.smith@example.com</td>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">Approved</td>
+                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">
+                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Reject</button>
+                            </td>
                         </tr>
-                        <tr>
-                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">Alice Johnson</td>
-                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">alice.johnson@example.com</td>
-                        </tr>
-                        <tr>
-                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">Bob Brown</td>
-                            <td class="px-2 sm:px-4 md:px-6 py-4 whitespace-wrap">bob.brown@example.com</td>
-                        </tr>
+                        <!-- Add more rows as needed -->
                     </tbody>
                 </table>
             </div>
+
         </main>
     </div>
 </body>
