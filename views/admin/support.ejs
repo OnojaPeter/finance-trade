@@ -2,14 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="https://kit.fontawesome.com/899e264fca.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+    <%- include('../partials/adminHead') %>
+    <title>Support</title>
 </head>
 
 <style>
@@ -36,79 +30,7 @@
 <body class="bg-gray-100 font-sans leading-normal tracking-normal" x-data="{ sidebarOpen: false }" @click.away="sidebarOpen = false">
 
     <div class="flex flex-col xl:flex-row min-h-screen">
-        <!-- Hamburger Menu for smaller Screens -->
-        <div class="xl:hidden py-4 px-6 bg-white shadow-2xl flex justify-between items-center">
-            <div @click="sidebarOpen = true" class="flex gap-1 items-center">
-                <h1 class="text-sm font-bold">MENU</h1>
-                <button class="focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-
-            <div x-data="{ open: false }" class="relative">
-                <button @click="open = !open" class="focus:outline-none">
-                    <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/150" alt="Profile">
-                </button>
-                <div x-show="open" x-cloak @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-20">
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Profile Settings</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Change Password</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Logout</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sidebar -->
-        <nav :class="{'translate-x-0': sidebarOpen, '-translate-x-full': !sidebarOpen}" class="bg-white shadow-2xl w-64 fixed xl:relative transform xl:transform-none transition-transform duration-300 ease-in-out xl:translate-x-0 h-full xl:h-auto z-50 xl:flex flex-col overflow-y-auto">
-            <div class="p-4 flex justify-between items-center">
-                <h1 class="text-2xl font-bold">ADMIN</h1>
-                <button @click="sidebarOpen = false" class="focus:outline-none xl:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-
-            <ul class="mt-6 space-y-2 font-semibold">
-                <a href="profile.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
-                    <i class="fas fa-user-cog w-5 h-5 inline-block"></i>
-                    Profile
-                </a>
-                <a href="investments.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
-                    <i class="fas fa-chart-line w-5 h-5 inline-block"></i>
-                    Investments
-                </a>
-                <a href="deposits.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
-                    <i class="fas fa-hand-holding-usd w-5 h-5 inline-block"></i>
-                    Deposits
-                </a>
-                <a href="withdrawals.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
-                    <i class="fas fa-hand-holding-usd w-5 h-5 inline-block"></i>
-                    Withdrawals
-                </a>
-                <a href="transactions.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
-                    <i class="fas fa-exchange-alt w-5 h-5 inline-block"></i>
-                    Transactions
-                </a>
-                <a href="support-ticket.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
-                    <i class="fas fa-life-ring w-5 h-5 inline-block"></i>
-                    Support Ticket
-                </a>
-                <a href="kyc.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
-                    <i class="fas fa-id-card w-5 h-5 inline-block"></i>
-                    KYC
-                </a>
-                <a href="change-password.html" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
-                    <i class="fas fa-key w-5 h-5 inline-block"></i>
-                    Change Password
-                </a>
-                <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
-                    <i class="fas fa-sign-out-alt w-5 h-5 inline-block"></i>
-                    Logout
-                </a>
-            </ul>
-        </nav>
+        <%- include('../partials/adminHeader') %>
 
         <!-- Main Content -->
         <main class="flex-grow bg-gray-100 min-h-screen p-6">
