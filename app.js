@@ -81,7 +81,7 @@ db.once('open', async() => {
 });
 
 
-
+const {isUser, isAdmin} = require('./middlewares/passport')
 // ROUTES
 const homeRoute = require('./routes/homeRoute');
 const profileRoute = require('./routes/profileRoute');
@@ -90,7 +90,7 @@ const authRoute = require('./routes/authRoute')
 
 // APP.USE
 app.use('/', homeRoute);
-app.use('/profile', profileRoute);
+app.use('/profile', isUser, profileRoute);
 app.use('/admin', adminRoute);
 app.use('/auth', authRoute);
 

@@ -25,13 +25,13 @@
             <div class="hidden xl:flex justify-between items-center bg-white p-4 rounded shadow ">
                 <div class="font-bold text-xl">Dashboard</div>
                 <div x-data="{ open: false }" class="relative">
-                    <button @click="open = !open" class="focus:outline-none">
-                        <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/150" alt="Profile">
+                    <button @click="open = !open" class="focus:outline-none rounded-full border-2 bg-gray-900">
+                        <p class="text-2xl text-white uppercase p-2"><%= user.fName.slice(0,1)  %> <%= user.lName.slice(0,1) %></p>
                     </button>
                     <div x-show="open" x-cloak @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-20">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Profile Settings</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Change Password</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Logout</a>
+                        <a href="profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Profile Settings</a>
+                        <a href="change-password" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Change Password</a>
+                        <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Logout</a>
                     </div>
                 </div>
             </div>

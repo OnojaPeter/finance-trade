@@ -21,119 +21,26 @@
 <body class="bg-gray-100 font-sans leading-normal tracking-normal" x-data="{ sidebarOpen: false }" @click.away="sidebarOpen = false">
 
     <div class="flex flex-col xl:flex-row min-h-screen">
-        <!-- Sidebar -->
-         <!-- Hamburger Menu for smaller Screens -->
-        <div class="xl:hidden py-4 px-6 bg-white shadow-2xl flex justify-between  items-center">
-            <div @click="sidebarOpen = true" class="  flex gap-1 items-center">
-                <h1 class="text-sm font-bold">MENU</h1>
-                <button  class="focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-
-            <div x-data="{ open: false }" class="relative">
-                <button @click="open = !open" class="focus:outline-none">
-                    <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/150" alt="Profile">
-                </button>
-                <div x-show="open" x-cloak @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-20">
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Profile Settings</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Change Password</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Logout</a>
-                </div>
-            </div>
-        </div>
-
-        <nav :class="{'translate-x-0': sidebarOpen, '-translate-x-full': !sidebarOpen}" class=" bg-white shadow-2xl w-64 fixed xl:relative transform xl:transform-none transition-transform duration-300 ease-in-out xl:translate-x-0 h-full xl:h-auto z-50 xl:flex flex-col overflow-y-auto">
-            <!-- <div class="p-4">
-                <h1 class="text-2xl font-bold">LOGO HERE</h1>
-            </div> -->
-            <div class="p-4 flex justify-between items-center">
-                <h1 class="text-2xl font-bold">LOGO HERE</h1>
-                <button @click="sidebarOpen = false" class="focus:outline-none xl:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-
-            <div class="p-4 flex flex-col gap-5">
-                <h2 class="uppercase font-semibold text-sm">account balance</h2>
-                <div class="flex flex-col gap-2">
-                    <p class="text-base font-medium"><span class="font-bold text-xl">5.00</span> USD (Deposit Wallet)</p>
-                    <p class="text-sm font-medium"><span class="font-semibold text-xl">0.00</span> USD (Interest Wallet)</p>
-                </div>
-                <div class="flex flex-row gap-4">
-                    <a href="" class="bg-blue-800 hover:bg-blue-900 px-3 py-2 text-white font-semibold rounded">
-                        <button>Deposit</button>
-                    </a>
-                    <a href="" class="bg-gray-800 hover:bg-gray-900 px-2 py-2 text-white rounded">
-                        <button>Withdraw</button>
-                    </a>
-                </div>
-            </div>
-
-            <ul class="mt-6 space-y-2 font-semibold">
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/dashboard.png" alt=""> Dashboard
-                    </a></li>
-                    <li><a href="/profile-investment.html" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/investment.png" alt=""> Investment
-                    </a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/deposit.png" alt=""> Deposit
-                    </a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/withdraw.png" alt=""> Withdraw
-                    </a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/transactions.png" alt=""> Transactions
-                    </a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/referral.png" alt=""> Referral
-                    </a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/support.png" alt=""> Support
-                    </a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/2fa.png" alt=""> 2FA
-                    </a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/profile.png" alt=""> Profile
-                    </a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/password.png" alt=""> Change Password
-                    </a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-blue-700 hover:text-white hover-invert">
-                        <img class="h-6 w-6 mr-2" src="img/logout.png" alt=""> Logout
-                    </a></li>
-            </ul>
-        </nav>
+        <!-- Nav -->
+        <%- include('../partials/profileHeader') %>
 
         <!-- Main Content -->
-        <main class="flex-grow bg-gray-100 min-h-screen p-6">
+        <main class="flex-grow bg-gray-100 min-h-screen p-6 xl:ml-64">
             <!-- Top Bar -->
             <div class="hidden xl:flex justify-between items-center bg-white p-4 rounded shadow ">
                 <div class="font-bold text-xl">Dashboard</div>
                 <div x-data="{ open: false }" class="relative">
-                    <button @click="open = !open" class="focus:outline-none">
-                        <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/150" alt="Profile">
+                    <button @click="open = !open" class="focus:outline-none rounded-full border-2 bg-gray-900">
+                        <p class="text-2xl text-white uppercase p-2"><%= user.fName.slice(0,1)  %> <%= user.lName.slice(0,1) %></p>
                     </button>
                     <div x-show="open" x-cloak @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-20">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Profile Settings</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Change Password</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Logout</a>
+                        <a href="profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Profile Settings</a>
+                        <a href="change-password" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Change Password</a>
+                        <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Logout</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Dashboard Content -->
-            <!-- <div class="mt-8 max-page-width bg-white p-4 rounded shadow">
-                <h2 class="text-2xl font-bold mb-4">Welcome to Your Dashboard</h2>
-                <p class="text-gray-700">Here you can view your investment stats, manage deposits and withdrawals, and more.</p>
-                
-            </div> -->
             <div class="xl:container mx-auto pt-4">
                 <div class="max-w-xl mx-auto ">
                     <div class="">
