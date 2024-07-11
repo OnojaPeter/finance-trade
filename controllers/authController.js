@@ -15,7 +15,7 @@ function login (req, res, next) {
           if (err) {
             return next(err);
           }
-          req.flash('success', 'Welcome Back');
+          req.flash('success_msg', 'Welcome Back');
           const redirectUrl = req.session.returnTo || '/profile/dashboard';
           delete req.session.returnTo;
           return res.redirect(redirectUrl);
@@ -36,7 +36,7 @@ const signup = async (req, res) => {
       const newUser = new User({ fName, lName, email, password, username, role: 'user' });
       await newUser.save();
   
-      req.flash('success', 'Please Login with your email and password');
+      req.flash('success_msg', 'Please Login with your email and password');
       res.redirect('/login');
     } catch (err) {
       console.error(err);

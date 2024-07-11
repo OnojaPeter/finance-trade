@@ -22,6 +22,7 @@
         <!-- Main Content -->
         <main class="flex-grow bg-gray-100 min-h-screen p-6 xl:ml-64">
             <!-- Top Bar -->
+            <%- include('../partials/flashError') -%>
             <div class="hidden xl:flex justify-between items-center bg-white p-4 rounded shadow ">
                 <div class="font-bold text-xl">Dashboard</div>
                 <div x-data="{ open: false }" class="relative">
@@ -31,7 +32,7 @@
                     <div x-show="open" x-cloak @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-20">
                         <a href="profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Profile Settings</a>
                         <a href="change-password" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Change Password</a>
-                        <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Logout</a>
+                        <a href="/auth/logout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">Logout</a>
                     </div>
                 </div>
             </div>
