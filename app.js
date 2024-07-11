@@ -8,6 +8,8 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const passport = require('passport');
+const Passport = require('./middlewares/passport')
+const LocalStrategy = require('passport-local').Strategy;
 
 // Configure environment variables
 dotenv.config();
@@ -51,9 +53,10 @@ app.use(session({
 }));
 
 // Initialize Passport and configure session management
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(passport.authenticate('session'));
+app.use(Passport.initializePassport());
+app.use(Passport.sessionPassport());
+// app.use(passport.session());
+// app.use(passport.authenticate('session'));
 
 // Flash messages middleware
 app.use(flash());

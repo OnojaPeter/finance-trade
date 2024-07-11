@@ -12,50 +12,51 @@
     <main class="max-page-width px-4 md:px-5 lg:px-10 xl:px-30">
         <section class="my-20 mx-6 sm:mx-16 md:mx-44 lg:mx-60 xl:mx-80 ">
             <div class="shadow-2xl p-6 md:p-10 rounded-md">
-                <form action="" class="flex flex-col gap-6">
+                <%- include('partials/flashError') -%>
+                <form action="/auth/signup" method="post" class="flex flex-col gap-6">
 
                     <div class=" flex gap-2 w-full">
                             <div class="w-full flex flex-col gap-2">
-                                <label class="block text-gray-700 text-sm font-bold" for="">First Name</label>
+                                <label class="block text-gray-700 text-sm font-bold" for="fname">First Name</label>
 
-                                <input placeholder="First Name"
+                                <input placeholder="First Name" name="fName" id="fName"
                                     class=" border rounded w-full h-12 py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300"
                                     type="text">
                             </div>
                             <div class="w-full flex flex-col gap-2">
-                                <label class="block text-gray-700 text-sm font-bold" for="">Last Name</label>
+                                <label class="block text-gray-700 text-sm font-bold" for="lname">Last Name</label>
 
-                                <input placeholder="Last Name"
+                                <input placeholder="Last Name" name="lName" id="lName"
                                     class=" border rounded w-full h-12 py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300"
                                     type="text">
                             </div>
                     </div>
 
                         <div class="flex flex-col gap-2">
-                            <label class="block text-gray-700 text-sm font-bold" for="">Username</label>
-                            <input placeholder="Username"
+                            <label class="block text-gray-700 text-sm font-bold" for="username">Username</label>
+                            <input placeholder="Username" name="username" id="username"
                                 class=" border rounded  py-3 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300"
                                 type="text">
                         </div>
 
                         <div class="flex flex-col gap-2">
-                            <label class="block text-gray-700 text-sm font-bold" for="">Email Address</label>
-                            <input placeholder="Email Address"
+                            <label class="block text-gray-700 text-sm font-bold" for="email">Email Address</label>
+                            <input placeholder="Email Address" name="email" id="email"
                                 class=" border rounded  py-3 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300"
                                 type="email">
                         </div>
 
                         <div class="flex flex-col gap-2">
-                            <label class="block text-gray-700 text-sm font-bold" for="">Password</label>
-                            <input type="password" placeholder="Password"
+                            <label class="block text-gray-700 text-sm font-bold" for="password">Password</label>
+                            <input type="password" placeholder="Password" name="password" id="password"
                                 class=" border rounded  py-3 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300">
                         </div>
 
-                        <div class="flex flex-col gap-2">
+                        <!-- <div class="flex flex-col gap-2">
                             <label class="block text-gray-700 text-sm font-bold" for="">Confirm Password</label>
                             <input type="password" placeholder="Retype Password"
                                 class=" border rounded  py-3 w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300">
-                        </div>
+                        </div> -->
 
                     <div class="">
                         <button
@@ -67,7 +68,7 @@
                 <div class="mt-6 flex justify-center">
                     <p class="text-sm text-gray-400 "> Got an Account? 
                         <a
-                            class="text-blue-600 hover:text-blue-800 font-semibold" href="login">Login Account
+                            class="text-blue-600 hover:text-blue-800 font-semibold" href="/login">Login Account
                         </a>
                     </p>
                 </div>

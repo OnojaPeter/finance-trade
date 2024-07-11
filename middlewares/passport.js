@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
-const User = require('../models/users');
+const User = require('../models/user');
 
 passport.use(new LocalStrategy(
   { usernameField: 'email' },
@@ -39,9 +39,9 @@ passport.deserializeUser(async (id, done) => {
     }
 });
 
-// const initializePassport = () => {
-//   return passport.initialize();
-// };
+const initializePassport = () => {
+  return passport.initialize();
+};
 
 const sessionPassport = () => {
   return passport.session();
@@ -80,7 +80,7 @@ function saveOriginalUrl(req, res, next) {
 }
 
 module.exports = {
-//   initializePassport,
+  initializePassport,
   sessionPassport,
   isAuthenticated,
   isUser,

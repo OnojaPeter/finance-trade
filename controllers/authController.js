@@ -1,4 +1,5 @@
 const passport = require('passport')
+const User = require('../models/user')
 
 function login (req, res, next) {
     passport.authenticate('local', (err, user, info) => {
@@ -15,7 +16,7 @@ function login (req, res, next) {
             return next(err);
           }
           req.flash('success', 'Welcome Back');
-          const redirectUrl = req.session.returnTo || '/';
+          const redirectUrl = req.session.returnTo || '/profile/dashboard';
           delete req.session.returnTo;
           return res.redirect(redirectUrl);
         });
@@ -23,23 +24,24 @@ function login (req, res, next) {
 }
 
 const signup = async (req, res) => {
-    const { fname, lname, email, password } = req.body;
+    const { fName, lName, email, password, username } = req.body;
   
     try {
       const existingUser = await User.findOne({ email });
       if (existingUser) {
-        const message = 'User with mail already exists';
-        return res.render('client-signup', { message });
+        req.flash('error_msg', 'User with mail already exists.');
+        return res.redirect('/signup')
       }
   
-      const newUser = new User({ fname, lname, email, password, role: 'user' });
+      const newUser = new User({ fName, lName, email, password, username, role: 'user' });
       await newUser.save();
   
       req.flash('success', 'Please Login with your email and password');
       res.redirect('/login');
     } catch (err) {
       console.error(err);
-      res.render('client-signup', { message: 'An error occurred, please try again.' });
+      req.flash('error_msg', 'An error occurred, please try again.');
+      res.redirect('/signup')
     }
   };
   
