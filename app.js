@@ -1,16 +1,13 @@
-const bcrypt = require('bcryptjs');
+const express = require('express');
 const flash = require('connect-flash');
 const MongoStore = require('connect-mongo');
 const dotenv = require('dotenv');
-const ejs = require('ejs');
-const express = require('express');
+// const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const multer = require('multer');
-const nodemailer = require('nodemailer');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 
 // Configure environment variables
 dotenv.config();
@@ -40,20 +37,34 @@ const upload = multer({ dest: 'uploads/' });
 const uri = 'mongodb://127.0.0.1:27017/Mutrade';
 // const uri = process.env.MONGODB_URI;
 
-// Set up session management
+// Session configuration
 app.use(session({
-  secret: 'your-secret-key',
+  secret: 'your_secret_key',
   resave: false,
   saveUninitialized: true,
-  store: MongoStore.create({ mongoUrl: uri })
+  store: MongoStore.create({ mongoUrl: uri }),
+  cookie: {
+    httpOnly: true,
+    expires: Date.now() + 1000 * 60 *60 * 24 * 7,
+    maxAge: 1000 * 60 *60 * 24 * 7
+}
 }));
 
 // Initialize Passport and configure session management
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(passport.authenticate('session'));
 
 // Flash messages middleware
 app.use(flash());
+app.use((req, res, next) => {
+  res.locals.user = req.user;
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  res.locals.session = req.session
+  next();
+});
 
 // Connect to MongoDB
 // const uri = 'mongodb://127.0.0.1:27017/Mutrade';
@@ -71,12 +82,14 @@ db.once('open', async() => {
 // ROUTES
 const homeRoute = require('./routes/homeRoute');
 const profileRoute = require('./routes/profileRoute');
-const adminRoute = require('./routes/adminRoute')
+const adminRoute = require('./routes/adminRoute');
+const authRoute = require('./routes/authRoute')
 
 // APP.USE
 app.use('/', homeRoute);
 app.use('/profile', profileRoute);
 app.use('/admin', adminRoute);
+app.use('/auth', authRoute);
 
 
 // Start the server
