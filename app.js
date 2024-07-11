@@ -36,8 +36,8 @@ app.use(express.urlencoded({ extended: true }));
 const upload = multer({ dest: 'uploads/' });
 
 // database uri
-const uri = 'mongodb://127.0.0.1:27017/Mutrade';
-// const uri = process.env.MONGODB_URI;
+// const uri = 'mongodb://127.0.0.1:27017/Mutrade';
+const uri = process.env.MONGODB_URI;
 
 // Session configuration
 app.use(session({
@@ -69,9 +69,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Connect to MongoDB
-// const uri = 'mongodb://127.0.0.1:27017/Mutrade';
-// const uri = process.env.MONGODB_URI;
 mongoose.connect(uri);
 const db = mongoose.connection;
 // Event listeners for connection status
